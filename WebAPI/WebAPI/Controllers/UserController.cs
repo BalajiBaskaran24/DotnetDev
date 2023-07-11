@@ -4,6 +4,9 @@
 
 namespace WebAPI.Controllers;
 
+//To perform
+//Create Read Update Delete below verbs will be used
+
 //GET - Client gets the data from http server
 //POST - Creates new record
 //PUT - Updates whole record (or possibly creates)
@@ -14,33 +17,44 @@ namespace WebAPI.Controllers;
 [ApiController]
 public class UserController : ControllerBase
 {
-    // GET: api/<UserController>
-    [HttpGet]
-    public IEnumerable<string> Get()
+    public IConfiguration Configuration { get; }
+
+    public UserController(IConfiguration configuration)
     {
-        return new string[] { "value1", "value2" };
+        Configuration = configuration;
     }
 
-    // GET api/<UserController>/5
+
+    //// GET: api/Users/GetAllUser
+    //[HttpGet("GetAllUser")]//Decorator
+
+    // GET: api/Users/
+    [HttpGet()]//Decorator
+    public string Get()
+    {
+        return Configuration.GetConnectionString("Default");
+    }
+
+    // GET api/Users/5
     [HttpGet("{id}")]
     public string Get(int id)
     {
         return "value";
     }
 
-    // POST api/<UserController>
+    // POST api/Users
     [HttpPost]
     public void Post([FromBody] string value)
     {
     }
 
-    // PUT api/<UserController>/5
+    // PUT api/Users/5
     [HttpPut("{id}")]
     public void Put(int id, [FromBody] string value)
     {
     }
 
-    // DELETE api/<UserController>/5
+    // DELETE api/Users/5
     [HttpDelete("{id}")]
     public void Delete(int id)
     {
