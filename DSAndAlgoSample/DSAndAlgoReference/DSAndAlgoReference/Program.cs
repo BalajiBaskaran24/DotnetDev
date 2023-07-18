@@ -12,6 +12,10 @@ public class Program
 {
     public static void Main(string[] args)
     {
+
+        PriorityQueueEx Sample=new PriorityQueueEx();
+        Sample.AddSample();
+
         Option ReqType = Option.None;
         switch (ReqType)
         {
