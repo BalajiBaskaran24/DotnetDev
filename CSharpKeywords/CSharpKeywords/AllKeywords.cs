@@ -1,4 +1,4 @@
-﻿namespace CSharpKeywords
+﻿namespace CSharpRef
 {
     public class AllKeywords
     {
