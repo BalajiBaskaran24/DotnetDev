@@ -12,39 +12,59 @@ namespace CSharpRef
     }
 
 
-    class Mammal
+    public interface IEmployeeBonus
     {
-        public Mammal(int vertebrae) { }
+        public decimal CalculateBonus();
+    }
 
-        public Mammal(Mammal mam) { }
+    public interface IEmployee
+    {
+        int ID { get; set; }
+        string Name { get; set; }
+        public decimal GetMinimumSalary();
+    }
 
-        public virtual Mammal Clone()
+    public abstract class Employee : IEmployee, IEmployeeBonus
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+
+        public Employee(int id, string name)
         {
-            return new Mammal(this);
+            ID = id;
+            Name = name;
+        }
+
+        public abstract decimal CalculateBonus();
+        public abstract decimal GetMinimumSalary();
+    }
+
+    public class PermanentEmployee : Employee
+    {
+        public PermanentEmployee(int id, string name) : base(id, name)
+        {
+
+        }
+        public override decimal CalculateBonus()
+        {
+            return 100;
+        }
+
+        public override decimal GetMinimumSalary()
+        {
+            return 1000;
         }
     }
 
-    class Nerd : Mammal
+    public class ContractEmployee : IEmployee
     {
-        public double Diopter { get; protected set; }
-        public Nerd(int vertebrae, double diopter)
-        : base(vertebrae) { Diopter = diopter; }
-        protected Nerd(Nerd toBeCloned)
-        : base(toBeCloned) { Diopter = toBeCloned.Diopter; }
-        // Would prefer to return Nerd instead:
-        public override Mammal Clone() { return new Nerd(this); }
-        //public new Nerd Clone()
-        //{
-        //    return new Nerd(this);
-        //}
-    }
+        public int ID { get; set; }
+        public string Name { get; set; }
 
-    public class Usage
-    {
-        public void Trigger()
+        public decimal GetMinimumSalary()
         {
-            Mammal Mam = new Nerd(0, 0);
-            Mam.Clone(null);
+            return 10;
         }
     }
+
 }
