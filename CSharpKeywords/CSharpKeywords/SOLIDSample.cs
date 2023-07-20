@@ -8,22 +8,24 @@ namespace CSharpRef
 {
     public class SOLIDSample
     {
-
+        public void TriggerL()
+        {
+            dynamic ContractEmp = new PermanentEmployee(1, "");
+            ContractEmp.GetMinimumSalary();
+        }
     }
 
-
+    #region L - Liskov substitution Principle
     public interface IEmployeeBonus
     {
         public decimal CalculateBonus();
     }
-
     public interface IEmployee
     {
         int ID { get; set; }
         string Name { get; set; }
         public decimal GetMinimumSalary();
     }
-
     public abstract class Employee : IEmployee, IEmployeeBonus
     {
         public int ID { get; set; }
@@ -38,7 +40,6 @@ namespace CSharpRef
         public abstract decimal CalculateBonus();
         public abstract decimal GetMinimumSalary();
     }
-
     public class PermanentEmployee : Employee
     {
         public PermanentEmployee(int id, string name) : base(id, name)
@@ -55,7 +56,6 @@ namespace CSharpRef
             return 1000;
         }
     }
-
     public class ContractEmployee : IEmployee
     {
         public int ID { get; set; }
@@ -66,5 +66,9 @@ namespace CSharpRef
             return 10;
         }
     }
+
+
+
+    #endregion
 
 }
