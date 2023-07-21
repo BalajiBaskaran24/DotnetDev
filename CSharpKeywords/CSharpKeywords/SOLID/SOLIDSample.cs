@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpRef
+namespace CSharpRef.SOLID
 {
     public class SOLIDSample
     {
@@ -70,5 +70,7 @@ namespace CSharpRef
 
 
     #endregion
+
+
 
 }
