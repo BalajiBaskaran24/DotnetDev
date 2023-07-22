@@ -72,6 +72,12 @@ class Starter
                         ContainerBuilder builder = new ContainerBuilder();
 
                         builder.RegisterType<Commerce>();
+                        
+                        //Various available options
+                        //builder.RegisterType<Commerce>().SingleInstance();
+                        //builder.RegisterType<Commerce>().InstancePerDependency();
+                        //builder.RegisterType<Commerce>().InstancePerLifetimeScope();
+
                         builder.RegisterType<Stage3.Notifier>().As<Stage3.INotifier>();
 
                         builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
