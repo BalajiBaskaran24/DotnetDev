@@ -19,11 +19,15 @@ public class UserController : ControllerBase
 {
     public IConfiguration Configuration { get; }
 
+    private readonly ILogger<UserController> _logger;
     public UserController(IConfiguration configuration)
     {
         Configuration = configuration;
     }
-
+    //public UserController(ILogger<UserController> logger)
+    //{
+    //    _logger = logger;
+    //}
 
     //// GET: api/Users/GetAllUser
     //[HttpGet("GetAllUser")]//Decorator

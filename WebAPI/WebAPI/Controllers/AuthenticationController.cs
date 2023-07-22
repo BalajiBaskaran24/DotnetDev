@@ -10,21 +10,21 @@ public class AuthenticationController : ControllerBase
     public record AuthenticationData(string? UserName, string? Password);
 
     //api/Authentication/token
-    [HttpPost("token")]
-    public ActionResult<string> Authenticate([FromBody] AuthenticationData data)
-    {
+    //[HttpPost("token")]
+    //public ActionResult<string> Authenticate([FromBody] AuthenticationData data)
+    //{
+    //
+    //}
 
-    }
+    //private user ValidateCredentials(AuthenticationData data)
+    //{
+    //    //This is only for demo - Do not use in real implementation
+    //    if (CompareValues(data.UserName, "balaji") &&
+    //            CompareValues(data.Password, "sam"))
+    //    {
 
-    private user ValidateCredentials(AuthenticationData data)
-    {
-        //This is only for demo - Do not use in real implementation
-        if (CompareValues(data.UserName, "balaji") &&
-                CompareValues(data.Password, "sam"))
-        {
-
-        }
-    }
+    //    }
+    //}
 
     private bool CompareValues(string? actual, string? expected)
     {
