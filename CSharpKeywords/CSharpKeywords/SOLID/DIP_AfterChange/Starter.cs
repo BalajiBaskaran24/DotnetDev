@@ -1,7 +1,7 @@
 ﻿namespace CSharpRef.SOLID.DIP_AfterChange;
 class Starter
 {
-    static void Main(string[] args)
+    public static void Execute()
     {
         IPerson owner = Factory.CreatePerson();
 

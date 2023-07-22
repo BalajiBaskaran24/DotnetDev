@@ -1,7 +1,7 @@
 ﻿namespace CSharpRef.SOLID.DIP_BeforeChange;
 class Starter
 {
-    static void Main(string[] args)
+    public static void Execute()
     {
         Person owner = new Person
         {
