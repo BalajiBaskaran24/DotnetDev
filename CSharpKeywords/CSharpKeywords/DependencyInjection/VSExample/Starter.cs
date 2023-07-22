@@ -85,15 +85,10 @@ class Starter
                                 i => i.Name == "I" + t.Name));
 
                         builder.RegisterType<Stage3.Logger>().As<Stage3.ILogger>();
-
                         Container = builder.Build();
-
                         Stage3.Commerce commerce3 = Container.Resolve<Stage3.Commerce>();
-
                         commerce3.ProcessOrder(orderInfo);
-
                         #endregion
-
                         break;
                 }
 
