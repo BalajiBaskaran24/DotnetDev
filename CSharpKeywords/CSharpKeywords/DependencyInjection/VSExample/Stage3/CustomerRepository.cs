@@ -5,6 +5,12 @@ namespace CSharpRef.DependencyInjection.VSExample.Stage3
 {
     public class CustomerRepository : ICustomerRepository
     {
+        private readonly ILogger logIns;
+
+        public CustomerRepository(ILogger logIns)
+        {
+            this.logIns = logIns;
+        }
         void ICustomerRepository.Save()
         {
             Console.WriteLine("Customer purchase saved.");
