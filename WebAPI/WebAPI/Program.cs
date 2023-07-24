@@ -19,7 +19,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-//Packages for authentication and authorization
+
+//-----Packages for authentication and authorization-----
 //Microsoft.AspNetCore.Authentication.JwtBearer
 //Microsoft.IdentityModel.Tokens
 //Microsoft.IdentityModel.Tokens.Jwt
