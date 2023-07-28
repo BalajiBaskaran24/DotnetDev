@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{983341b1-9a76-4288-9962-ff9f92686371}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql150DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -71,6 +71,9 @@
     <Build Include="dbo\StoredProcedures\spUser_Update.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="MinimalDB.publish.xml" />
+    <None Include="LocalMinimalDB.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Script.PostDeployment2.sql" />
   </ItemGroup>
 </Project>
