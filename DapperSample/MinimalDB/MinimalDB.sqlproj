@@ -3,16 +3,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <Name>DBSystem</Name>
+    <Name>MinimalDB</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{96474c43-5e5c-45bc-a34a-f1d34b857326}</ProjectGuid>
+    <ProjectGuid>{983341b1-9a76-4288-9962-ff9f92686371}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
-    <RootNamespace>DBSystem</RootNamespace>
-    <AssemblyName>DBSystem</AssemblyName>
+    <RootNamespace>MinimalDB</RootNamespace>
+    <AssemblyName>MinimalDB</AssemblyName>
     <ModelCollation>1033, CI</ModelCollation>
     <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
     <DeployToDatabase>True</DeployToDatabase>
@@ -57,21 +57,20 @@
   <ItemGroup>
     <Folder Include="Properties" />
     <Folder Include="dbo" />
-    <Folder Include="dbo\table" />
     <Folder Include="dbo\StoredProcedures" />
+    <Folder Include="dbo\table" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\table\User.sql" />
-    <Build Include="dbo\StoredProcedures\spUser_GetAll.sql" />
-    <Build Include="dbo\StoredProcedures\spUser_Get.sql" />
     <Build Include="dbo\StoredProcedures\spUser_Delete.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\StoredProcedures\spUser_Get.sql" />
+    <Build Include="dbo\StoredProcedures\spUser_GetAll.sql" />
     <Build Include="dbo\StoredProcedures\spUser_Insert.sql" />
     <Build Include="dbo\StoredProcedures\spUser_Update.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Script.PostDeployment1.sql" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="DBSystem.publish.xml" />
+    <None Include="MinimalDB.publish.xml" />
   </ItemGroup>
 </Project>
