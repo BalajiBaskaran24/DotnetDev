@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Microsoft.Extensions.Configuration;
+using Serilog;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -19,11 +20,13 @@ public class SqlDataAccess : ISqlDataAccess
         U parameters,
         string connectionId = "Default")
     {
+        Log.Write(Serilog.Events.LogEventLevel.Error, "Entered load data");
         string? connString = _configuration.GetConnectionString(connectionId);
         IDbConnection connection = new SqlConnection();
         try
         {
             connection = new SqlConnection(connString);
+
         }
         catch (Exception ex)
         {
