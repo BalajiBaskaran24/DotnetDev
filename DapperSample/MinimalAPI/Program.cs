@@ -15,6 +15,7 @@ public class Program
             WriteTo.File("logdata.txt").
             CreateLogger();
 
+        //TO log all transactions like listening to port, etc
         builder.Services.AddLogging(b =>
         b.AddSerilog(dispose: true));
 
