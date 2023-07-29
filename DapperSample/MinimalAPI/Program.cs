@@ -1,6 +1,7 @@
 
 using DataAccess.Data;
 using DataAccess.DbAccess;
+using Serilog;
 
 namespace MinimalAPI;
 
@@ -10,6 +11,13 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
+        Log.Logger = new LoggerConfiguration().Enrich.FromLogContext().
+            WriteTo.File("logdata.txt").
+            CreateLogger();
+
+        builder.Services.AddLogging(b =>
+        b.AddSerilog(dispose: true));
+
         // Add services to the container.
         builder.Services.AddAuthorization();
 
@@ -18,8 +26,8 @@ public class Program
         builder.Services.AddSwaggerGen();
         builder.Services.AddSingleton<ISqlDataAccess, SqlDataAccess>();
         builder.Services.AddSingleton<IUserData, UserData>();
-        var app = builder.Build();
 
+        var app = builder.Build();
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
