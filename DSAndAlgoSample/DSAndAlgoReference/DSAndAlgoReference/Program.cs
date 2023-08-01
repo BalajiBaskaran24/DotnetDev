@@ -1,5 +1,6 @@
 ﻿
 using DSAndAlgoReference;
+using DSAndAlgoReference.Hashing.CollisionHandling;
 
 public enum Option
 {
@@ -13,7 +14,15 @@ public class Program
     public static void Main(string[] args)
     {
 
-        PriorityQueueEx Sample=new PriorityQueueEx();
+        LLChainingHelper.Starter();
+
+        List<int> IntLst = new List<int>();
+        List<int>[] ArrayofList = new List<int>[10];
+        //ArrayofList[0].Add(0);//will throw exception. Since constructor is not called here
+        ArrayofList[0] = new List<int>();
+        ArrayofList[0].Add(0);//This will not create any error
+
+        PriorityQueueEx Sample = new PriorityQueueEx();
         Sample.AddSample();
 
         Option ReqType = Option.None;

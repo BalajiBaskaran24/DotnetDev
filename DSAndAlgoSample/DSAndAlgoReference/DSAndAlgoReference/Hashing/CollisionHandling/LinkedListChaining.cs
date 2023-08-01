@@ -75,13 +75,17 @@ namespace DSAndAlgoReference.Hashing.CollisionHandling
         }
     }
 
-    class Helper
+    class LLChainingHelper
     {
-        static void Starter()
+        public static void Starter()
         {
             ChainedHashTable<string, string> hashTable = new();
             hashTable.Add("Alice", "123-456");
             hashTable.Add("Bob", "789-012");
+            hashTable.Add("Aice", "13-456");
+            hashTable.Add("Bb", "79-12");
+            hashTable.Add("lice", "123-46");
+            hashTable.Add("ob", "79-012");
 
             if (hashTable.TryGetValue("Alice", out string aliceNumber))
             {
