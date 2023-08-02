@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace DSAndAlgoReference.Hashing.CollisionHandling
 {
-   
+
 
     public class ChainedHashTable<K, V>
     {
         private readonly int _buckets;
         private readonly LinkedList<KeyValuePair<K, V>>[] _table;
-
+        
         public ChainedHashTable(int buckets = 10)
         {
             _buckets = buckets;
