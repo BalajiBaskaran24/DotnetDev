@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using UnitTestRepo;
 namespace XUnitReference
 {
     public class AttributesReference
@@ -37,6 +37,15 @@ namespace XUnitReference
         public void ShouldAddTwoNumbers_Skip()
         {
             Assert.Equal(4, 2 + 2);
+        }
+
+
+        // This test uses the MemberData attribute 
+        [Theory]
+        [MemberData(nameof(CalculatorTests.AdditionData), MemberType = typeof(CalculatorTests))]
+        public void ShouldAddTwoNumbers_MemberData(int a, int b, int expected)
+        {
+            Assert.Equal(expected, a + b);
         }
 
     }
