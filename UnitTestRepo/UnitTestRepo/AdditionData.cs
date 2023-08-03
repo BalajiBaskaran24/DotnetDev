@@ -1,5 +1,5 @@
 ﻿namespace UnitTestRepo;
-public partial class CalculatorTests
+public partial class CalculatorTests_MemberData
 {
     // This static property returns the data for the test
     public static IEnumerable<object[]> AdditionData =>

@@ -42,11 +42,13 @@ namespace XUnitReference
 
         // This test uses the MemberData attribute 
         [Theory]
-        [MemberData(nameof(CalculatorTests.AdditionData), MemberType = typeof(CalculatorTests))]
+        [MemberData(nameof(CalculatorTests_MemberData.AdditionData), MemberType = typeof(CalculatorTests_MemberData))]
         public void ShouldAddTwoNumbers_MemberData(int a, int b, int expected)
         {
             Assert.Equal(expected, a + b);
         }
+
+
 
     }
 }
