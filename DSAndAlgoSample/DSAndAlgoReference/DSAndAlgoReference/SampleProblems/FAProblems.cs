@@ -20,6 +20,7 @@ namespace DSAndAlgoReference.SampleProblems
         /// <returns></returns>
         public static int Fibonacci(int n)
         {
+            Console.WriteLine($"Called with {n}");
             if (n <= 1)
             {
                 return n;
@@ -35,6 +36,7 @@ namespace DSAndAlgoReference.SampleProblems
         /// <returns></returns>
         public static int Fibonacci_Mem(int n, Dictionary<int, int> memo = null)
         {
+            Console.WriteLine($"Called with {n}");
             if (memo == null)
             {
                 memo = new Dictionary<int, int> { { 0, 0 }, { 1, 1 } };

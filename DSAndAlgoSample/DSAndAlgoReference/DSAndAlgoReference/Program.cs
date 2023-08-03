@@ -1,6 +1,8 @@
 ﻿
 using DSAndAlgoReference;
 using DSAndAlgoReference.Hashing.CollisionHandling;
+using DSAndAlgoReference.SampleProblems;
+using DSAndAlgoReference.SampleProblems.DynamicProgramming;
 
 public enum Option
 {
@@ -13,6 +15,12 @@ public class Program
 {
     public static void Main(string[] args)
     {
+        Console.Clear();
+        Console.WriteLine("Normal");
+        FAProblems.Fibonacci(10);
+        Console.WriteLine("Mem");
+        FAProblems.Fibonacci_Mem(10);
+        Strings.MinimumDeleteSum("delete", "leet");
 
         LLChainingHelper.Starter();
 
