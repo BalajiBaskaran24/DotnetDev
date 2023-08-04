@@ -3,6 +3,7 @@ using DSAndAlgoReference;
 using DSAndAlgoReference.Hashing.CollisionHandling;
 using DSAndAlgoReference.SampleProblems;
 using DSAndAlgoReference.SampleProblems.DynamicProgramming;
+using DSAndAlgoReference.SampleProblems.Recursion;
 
 public enum Option
 {
@@ -16,6 +17,13 @@ public class Program
     public static void Main(string[] args)
     {
         Console.Clear();
+        int Inp = 5;
+        Console.WriteLine($"Parameter. Input:{Inp}");
+        RecursionMethods.Function_SumnNumbers_Parameter(Inp, 0);
+        Console.WriteLine($"Functional. Input:{Inp}");
+        Console.WriteLine(RecursionMethods.Function_SumnNumbers_Functional(Inp));
+
+
         Console.WriteLine("Normal");
         FAProblems.Fibonacci(10);
         Console.WriteLine("Mem");
