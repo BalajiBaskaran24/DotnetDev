@@ -17,6 +17,7 @@ public class Program
     public static void Main(string[] args)
     {
         Console.Clear();
+        RecursionMethods.ReverseArray(0, 9);
         int Inp = 5;
         Console.WriteLine($"Parameter. Input:{Inp}");
         RecursionMethods.Function_SumnNumbers_Parameter(Inp, 0);
