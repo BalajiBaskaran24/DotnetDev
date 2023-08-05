@@ -17,7 +17,7 @@ public class Program
     public static void Main(string[] args)
     {
         Console.Clear();
-
+        RecursionMethods.PrintSumlSubSeq(0, new List<int>(), 0);
         RecursionMethods.PrintAllSubSeq(0, new List<int>());
 
         //RecursionMethods.ReverseArray(0, 9);
