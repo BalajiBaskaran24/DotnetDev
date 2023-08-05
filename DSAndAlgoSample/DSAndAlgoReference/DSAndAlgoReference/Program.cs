@@ -17,6 +17,9 @@ public class Program
     public static void Main(string[] args)
     {
         Console.Clear();
+
+        RecursionMethods.PrintAllSubSeq(0, new List<int>());
+
         //RecursionMethods.ReverseArray(0, 9);
         long Value = RecursionMethods.Fibonacci_SingleRec(5);
         int Inp = 5;

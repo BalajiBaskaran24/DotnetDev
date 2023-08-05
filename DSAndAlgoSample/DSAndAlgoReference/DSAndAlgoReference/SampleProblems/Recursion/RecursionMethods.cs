@@ -127,10 +127,42 @@ namespace DSAndAlgoReference.SampleProblems.Recursion
             if (n == 0)
                 return a;
             else
-                return Fibonacci_SingleRec(n - 1, b, a + b);
+            {
+                long temp = Fibonacci_SingleRec(n - 1, b, a + b);
+                Console.WriteLine(temp);
+                return temp;
+            }
         }
 
 
         #endregion
+
+        #region Stage 4 Subsequence
+
+        static int[] SubInput = new int[4] { 3, 2, 10, 30 };
+        /// <summary>
+        /// Take / not take
+        /// Time comp: 2 power n, space comp: O(n)
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="lst"></param>
+
+        public static void PrintAllSubSeq(int index, List<int> lst)
+        {
+            if (index >= SubInput.Length)
+            {
+                Console.Write(lst.Aggregate("", (s, n) => $"{s} , {n}"));
+                Console.WriteLine();
+                return;
+            }
+            lst.Add(SubInput[index]);
+            PrintAllSubSeq(index + 1, lst);
+            lst.Remove(SubInput[index]);
+            PrintAllSubSeq(index + 1, lst);
+        }
+
+        #endregion
+
+
     }
 }
