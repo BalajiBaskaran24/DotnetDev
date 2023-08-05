@@ -8,28 +8,34 @@ namespace DSAndAlgoReference.SampleProblems.Recursion
 {
     public class RecursionMethods
     {
-        public static int[] Input = new int[9] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
-        public static void ReverseArray(int left, int right)
+
+        #region Stage 1 Single function
+
+        public static void BasicPrint_Recursion(int n)
         {
-            if (left >= right) return;
-            Swap(ref Input[left], ref Input[right]);
-            ReverseArray(left + 1, right - 1);
-        }
-        private static int n = 9;
-        public static void ReverseArrayOneParam(int index)
-        {
-            if (index >= (n / 2))
+            if (n <= 0)
                 return;
-            Swap(ref Input[index], ref Input[n - index - 1]);
-            index += 1;
-        }
-        private static void Swap(ref int a, ref int b)
-        {
-            int Temp = a;
-            a = b;
-            b = Temp;
+            Console.WriteLine(n);
+            BasicPrint_Recursion(n - 1);
         }
 
+        #endregion
+
+        #region Stage 2 functional and parameterised
+
+        /// <summary>
+        /// Functional recusrion
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static int Function_SumnNumbers_Functional(int n)
+        {
+            if (n == 0)
+            {
+                return n;
+            }
+            return n + Function_SumnNumbers_Functional(n - 1);
+        }
 
         /// <summary>
         /// Parameterised recursion
@@ -46,20 +52,85 @@ namespace DSAndAlgoReference.SampleProblems.Recursion
             Function_SumnNumbers_Parameter(i - 1, sum + i);
         }
 
+        #region Swap array using recursion (return void) (n/2 for time and space complexity)
+
+        public static int[] Input = new int[9] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+        private static int n = 9;
+        public static void ReverseArray(int left, int right)
+        {
+            if (left >= right) return;
+            Swap(ref Input[left], ref Input[right]);
+            ReverseArray(left + 1, right - 1);
+        }
+        public static void ReverseArrayOneParam(int index)
+        {
+            if (index >= (n / 2))
+                return;
+            Swap(ref Input[index], ref Input[n - index - 1]);
+            index += 1;
+        }
+        private static void Swap(ref int a, ref int b)
+        {
+            int Temp = a;
+            a = b;
+            b = Temp;
+        }
+
+        #endregion
+
+        #region Palindrome or not using recursion (functional recursive)
+
+        static string Ip = "Madam";
+        public static bool CheckPalindrome(int index)
+        {
+            if (index >= (Ip.Length / 2))
+            {
+                return true;
+            }
+            if (Ip[index] != Ip[Ip.Length - index - 1])
+            {
+                return false;
+            }
+            return CheckPalindrome(index + 1);
+        }
+
+        #endregion
+
+        #endregion
+
+        #region Stage 3 Multiple recursion calls
 
         /// <summary>
-        /// Functional recusrion
+        /// Time and space Big0(2 power n)
         /// </summary>
         /// <param name="n"></param>
         /// <returns></returns>
-        public static int Function_SumnNumbers_Functional(int n)
+        public static int Fibonacci_MultiRecursion(int n)
         {
-            if (n == 0)
+            Console.WriteLine($"Called with {n}");
+            if (n <= 1)
             {
                 return n;
             }
-            return n + Function_SumnNumbers_Functional(n - 1);
+            return Fibonacci_MultiRecursion(n - 1) + Fibonacci_MultiRecursion(n - 2);
         }
 
+        /// <summary>
+        /// Fibonacci using single recursion function
+        /// </summary>
+        /// <param name="n"></param>
+        /// <param name="a"></param>
+        /// <param name="b"></param>
+        /// <returns></returns>
+        public static long Fibonacci_SingleRec(int n, long a = 0, long b = 1)
+        {
+            if (n == 0)
+                return a;
+            else
+                return Fibonacci_SingleRec(n - 1, b, a + b);
+        }
+
+
+        #endregion
     }
 }

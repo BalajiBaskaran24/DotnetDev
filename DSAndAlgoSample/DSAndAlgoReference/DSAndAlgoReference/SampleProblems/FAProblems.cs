@@ -13,20 +13,7 @@ namespace DSAndAlgoReference.SampleProblems
         //Fibonacci
 
 
-        /// <summary>
-        /// Big0(2 power n)
-        /// </summary>
-        /// <param name="n"></param>
-        /// <returns></returns>
-        public static int Fibonacci(int n)
-        {
-            Console.WriteLine($"Called with {n}");
-            if (n <= 1)
-            {
-                return n;
-            }
-            return Fibonacci(n - 1) + Fibonacci(n - 2);
-        }
+       
 
         /// <summary>
         /// Big O(n) With Memoization (Top-Down DP)
