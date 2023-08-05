@@ -17,15 +17,21 @@ public class Program
     public static void Main(string[] args)
     {
         Console.Clear();
-        RecursionMethods.ReverseArray(0, 9);
+        //RecursionMethods.ReverseArray(0, 9);
         int Inp = 5;
         Console.WriteLine($"Parameter. Input:{Inp}");
         RecursionMethods.Function_SumnNumbers_Parameter(Inp, 0);
-        Console.WriteLine($"Functional. Input:{Inp}");
-        Console.WriteLine(RecursionMethods.Function_SumnNumbers_Functional(Inp));
+        //Console.WriteLine($"Functional. Input:{Inp}");
+        //Console.WriteLine(RecursionMethods.Function_SumnNumbers_Functional(Inp));
 
-
-        Console.WriteLine("Normal");
+        Console.WriteLine("Basic itr using recursion");
+        FAProblems.BasicPrint_Recursion(5);
+        Console.WriteLine("Fibo Resursion method");
+        
+        
+        
+        
+        
         FAProblems.Fibonacci(10);
         Console.WriteLine("Mem");
         FAProblems.Fibonacci_Mem(10);
