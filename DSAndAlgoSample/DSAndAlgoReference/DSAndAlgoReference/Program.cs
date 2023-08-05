@@ -18,6 +18,7 @@ public class Program
     {
         Console.Clear();
         //RecursionMethods.ReverseArray(0, 9);
+        long Value = RecursionMethods.Fibonacci_SingleRec(5);
         int Inp = 5;
         Console.WriteLine($"Parameter. Input:{Inp}");
         RecursionMethods.Function_SumnNumbers_Parameter(Inp, 0);
@@ -25,14 +26,10 @@ public class Program
         //Console.WriteLine(RecursionMethods.Function_SumnNumbers_Functional(Inp));
 
         Console.WriteLine("Basic itr using recursion");
-        FAProblems.BasicPrint_Recursion(5);
+        RecursionMethods.BasicPrint_Recursion(5);
         Console.WriteLine("Fibo Resursion method");
-        
-        
-        
-        
-        
-        FAProblems.Fibonacci(10);
+
+        RecursionMethods.Fibonacci_MultiRecursion(10);
         Console.WriteLine("Mem");
         FAProblems.Fibonacci_Mem(10);
         Strings.MinimumDeleteSum("delete", "leet");
