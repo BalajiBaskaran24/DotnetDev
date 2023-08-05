@@ -23,8 +23,6 @@ namespace DSAndAlgoReference.SampleProblems.Recursion
             Swap(ref Input[index], ref Input[n - index - 1]);
             index += 1;
         }
-
-
         private static void Swap(ref int a, ref int b)
         {
             int Temp = a;
@@ -33,6 +31,11 @@ namespace DSAndAlgoReference.SampleProblems.Recursion
         }
 
 
+        /// <summary>
+        /// Parameterised recursion
+        /// </summary>
+        /// <param name="i"></param>
+        /// <param name="sum"></param>
         public static void Function_SumnNumbers_Parameter(int i, int sum)
         {
             if (i == 0)
@@ -43,6 +46,12 @@ namespace DSAndAlgoReference.SampleProblems.Recursion
             Function_SumnNumbers_Parameter(i - 1, sum + i);
         }
 
+
+        /// <summary>
+        /// Functional recusrion
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
         public static int Function_SumnNumbers_Functional(int n)
         {
             if (n == 0)
