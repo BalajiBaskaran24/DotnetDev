@@ -140,13 +140,13 @@ namespace DSAndAlgoReference.SampleProblems.Recursion
         #region Stage 4 Subsequence
 
         static int[] SubInput = new int[4] { 3, 2, 10, 30 };
+
         /// <summary>
         /// Take / not take
         /// Time comp: 2 power n, space comp: O(n)
         /// </summary>
         /// <param name="index"></param>
         /// <param name="lst"></param>
-
         public static void PrintAllSubSeq(int index, List<int> lst)
         {
             if (index >= SubInput.Length)
@@ -159,6 +159,44 @@ namespace DSAndAlgoReference.SampleProblems.Recursion
             PrintAllSubSeq(index + 1, lst);
             lst.Remove(SubInput[index]);
             PrintAllSubSeq(index + 1, lst);
+        }
+
+        static int[] SumSubInput = new int[7] { 1, 3, 2, 5, 0, 1, 4 };
+        static int ExpVal = 5;
+        /// <summary>
+        /// Take / not take
+        /// Time comp: 2 power n, space comp: O(n)
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="lst"></param>
+        public static bool PrintSumlSubSeq(int index, List<int> lst, int Sum)
+        {
+            if (index >= SumSubInput.Length)
+            {
+                if (Sum == ExpVal)
+                {
+                    foreach (int i in lst)
+                        Console.Write(i + ", ");
+                    Console.WriteLine();
+                    return true;
+                }
+                return false;
+            }
+            lst.Add(SumSubInput[index]);
+            Sum += SumSubInput[index];
+            if (PrintSumlSubSeq(index + 1, lst, Sum))
+            {
+                return true;
+            }
+
+            Sum -= SumSubInput[index];
+            lst.Remove(SumSubInput[index]);
+            if (PrintSumlSubSeq(index + 1, lst, Sum))
+            {
+                return true;
+            }
+            Console.WriteLine("No match found");
+            return false;
         }
 
         #endregion
