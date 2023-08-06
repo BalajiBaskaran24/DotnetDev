@@ -203,6 +203,73 @@ namespace DSAndAlgoReference.SampleProblems.Recursion
 
         #endregion
 
+        /// <summary>
+        /// TODO:: Understand the code
+        /// Using recursion
+        /// Count number of 1s from n to 1
+        /// in 13 - 1,2,3,4,5,6,7,8,9,10,11,12 => 5
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static int CountDigitOne_Rec(int n)
+        {
+            Console.WriteLine($"Called with:{n}");
+            if (n <= 0) return 0;
+            if (n < 10) return 1;
+
+            int powerOf10 = 1;
+            int temp = n;
+            while (temp >= 10)
+            {
+                powerOf10 *= 10;
+                temp /= 10;
+            }
+
+            int highestDigit = temp;
+            Console.WriteLine($"    Highest Digit:{highestDigit}");
+            int highest = highestDigit * CountDigitOne_Rec(powerOf10 - 1);
+            int remain = n - highestDigit * powerOf10;
+
+            if (highestDigit == 1)
+            {
+                highest += remain + 1;
+            }
+            else
+            {
+                highest += powerOf10;
+            }
+            Console.WriteLine($"        Highest :{highest} and remain:{remain}");
+            return highest + CountDigitOne_Rec(remain);
+        }
+
+        public static int CountDigitOne_WoRec(int ip)
+        {
+            int n = ip, factors = 1, count = 0, remainder = 0;
+            while (n > 0)
+            {
+                int temp = factors;
+                // check for remainders three cases mentioned in
+                // the approach
+                if (n % 10 == 0)
+                {
+                    remainder = 0;
+                }
+                else if (n % 10 > 1)
+                {
+                    remainder = temp;
+                }
+                else if (n % 10 == 1)
+                {
+                    remainder = (ip % temp) + 1;
+                }
+                factors *= 10; // incrementing factors for checking
+                               // different locations such as ones,
+                               // tens, hundreds places ones
+                count += ((ip / factors) * temp) + remainder;
+                n = n / 10;
+            }
+            return count;
+        }
 
     }
 }
