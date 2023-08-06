@@ -17,6 +17,18 @@ public class Program
     public static void Main(string[] args)
     {
         Console.Clear();
+        int Output1 = RecursionMethods.CountDigitOne_WoRec(9);
+        Console.WriteLine("Final output::" + Output1);
+        int Output2 = RecursionMethods.CountDigitOne_WoRec(99);
+        Console.WriteLine("Final output::" + Output2);
+        int Output3 = RecursionMethods.CountDigitOne_WoRec(999);
+        Console.WriteLine("Final output::" + Output3);
+        int Output4 = RecursionMethods.CountDigitOne_WoRec(1);
+        Console.WriteLine("Final output::" + Output4);
+        int Output5 = RecursionMethods.CountDigitOne_WoRec(1471);
+        Console.WriteLine("Final output::" + Output5);
+
+
         RecursionMethods.PrintSumlSubSeq(0, new List<int>(), 0);
         RecursionMethods.PrintAllSubSeq(0, new List<int>());
 
