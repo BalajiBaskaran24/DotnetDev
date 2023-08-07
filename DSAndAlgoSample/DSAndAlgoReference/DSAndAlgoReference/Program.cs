@@ -19,9 +19,9 @@ public class Program
         Console.Clear();
 
         int t = 0;
-        List<List<int>> ans = new();
+        IList<IList<int>> ans = new List<IList<int>>();
         List<int> ds = new List<int>();
-        
+        CombinationSum.FindCombinations_OnlyRecursion(new int[5] { 1, 2, 6, 5, 3 }, 6, 0, ds, ans);
         int Output1 = RecursionMethods.CountDigitOne_WoRec(9);
         Console.WriteLine("Final output::" + Output1);
         int Output2 = RecursionMethods.CountDigitOne_WoRec(99);

@@ -19,6 +19,14 @@ namespace DSAndAlgoReference.SampleProblems.Recursion
             return result;
         }
 
+        /// <summary>
+        /// With for loop
+        /// </summary>
+        /// <param name="candidates"></param>
+        /// <param name="remaining"></param>
+        /// <param name="start"></param>
+        /// <param name="current"></param>
+        /// <param name="result"></param>
         private void FindCombinations(int[] candidates, int remaining, int start, List<int> current, IList<IList<int>> result)
         {
             if (remaining < 0) return;
@@ -36,6 +44,30 @@ namespace DSAndAlgoReference.SampleProblems.Recursion
                 FindCombinations(candidates, remaining - candidates[i], i, current, result); // Note that 'i' is passed, not 'i+1' as we can reuse the same number
                 current.RemoveAt(current.Count - 1); // Backtrack
             }
+        }
+
+        /// <summary>
+        /// Only with recursion
+        /// </summary>
+        /// <param name="candidates"></param>
+        /// <param name="remaining"></param>
+        /// <param name="index"></param>
+        /// <param name="current"></param>
+        /// <param name="result"></param>
+        public static void FindCombinations_OnlyRecursion(int[] candidates, int remaining, int index, List<int> current, IList<IList<int>> result)
+        {
+            if (remaining == 0)
+            {
+                result.Add(new List<int>(current));
+                return;
+            }
+            if (remaining < 0 || index >= candidates.Length) return;
+            // Skip the candidate at current index
+            FindCombinations_OnlyRecursion(candidates, remaining, index + 1, current, result);
+            // Choose the candidate at current index
+            current.Add(candidates[index]);
+            FindCombinations_OnlyRecursion(candidates, remaining - candidates[index], index, current, result); // same index because the number can be reused
+            current.RemoveAt(current.Count - 1); // Backtrack
         }
     }
 }
