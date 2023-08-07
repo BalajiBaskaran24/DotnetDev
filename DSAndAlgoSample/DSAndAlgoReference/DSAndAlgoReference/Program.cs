@@ -17,6 +17,11 @@ public class Program
     public static void Main(string[] args)
     {
         Console.Clear();
+
+        int t = 0;
+        List<List<int>> ans = new();
+        List<int> ds = new List<int>();
+        
         int Output1 = RecursionMethods.CountDigitOne_WoRec(9);
         Console.WriteLine("Final output::" + Output1);
         int Output2 = RecursionMethods.CountDigitOne_WoRec(99);
