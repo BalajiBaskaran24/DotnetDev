@@ -203,6 +203,9 @@ namespace DSAndAlgoReference.SampleProblems.Recursion
 
         #endregion
 
+
+        #region Sample problems
+
         /// <summary>
         /// TODO:: Understand the code
         /// Using recursion
@@ -242,6 +245,11 @@ namespace DSAndAlgoReference.SampleProblems.Recursion
             return highest + CountDigitOne_Rec(remain);
         }
 
+        /// <summary>
+        /// Count digit one without recursion
+        /// </summary>
+        /// <param name="ip"></param>
+        /// <returns></returns>
         public static int CountDigitOne_WoRec(int ip)
         {
             int n = ip, factors = 1, count = 0, remainder = 0;
@@ -270,6 +278,10 @@ namespace DSAndAlgoReference.SampleProblems.Recursion
             }
             return count;
         }
+
+
+
+        #endregion
 
     }
 }
