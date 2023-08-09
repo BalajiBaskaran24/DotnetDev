@@ -31,6 +31,11 @@ class TestClass
         {
             return _x * _y;
         }
+
+        public void BaseClassSpecificMthd()
+        {
+
+        }
     }
 
     public class Circle : Shape
@@ -43,6 +48,10 @@ class TestClass
         {
             return PI * _x * _x;
         }
+
+        //Cannot override since virtual or abstract keyword is not present in base class
+        //public override void BaseClassSpecificMthd()
+        //{}
     }
 
     public class Sphere : Shape
