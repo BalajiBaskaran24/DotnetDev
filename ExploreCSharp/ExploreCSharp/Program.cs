@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CSharpRef.SOLID;
+using ExploreCSharp.SOLID;
 using ExploreCSharp.DependencyInjection.VSExample;
 
 namespace ExploreCSharp
@@ -15,7 +15,10 @@ namespace ExploreCSharp
             //SOLIDSample sOLID = new SOLIDSample();
             //sOLID.TriggerL();
 
-            DIPStarter.Execute();
+            //DIPStarter.Execute();
+
+            //== and .Equals comparison
+            Equals_EqualToOperator.StarterEquals();
         }
     }
 }

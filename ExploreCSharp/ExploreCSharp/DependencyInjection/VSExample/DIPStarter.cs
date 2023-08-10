@@ -72,14 +72,14 @@ class DIPStarter
 
                         ContainerBuilder builder = new ContainerBuilder();
 
-                        builder.RegisterType<Commerce>();
+                        builder.RegisterType<Stage3.Commerce>();
 
                         //Various available options
                         //builder.RegisterType<Commerce>().SingleInstance();
                         //builder.RegisterType<Commerce>().InstancePerDependency();
                         //builder.RegisterType<Commerce>().InstancePerLifetimeScope();
 
-                        builder.RegisterType<Notifier>().As<INotifier>();
+                        builder.RegisterType<Stage3.Notifier>().As<Stage3.INotifier>();
 
                         builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
                             .Where(t => t.Name.EndsWith("Processor") && t.Namespace.EndsWith("Stage3"))

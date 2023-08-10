@@ -1,4 +1,4 @@
-﻿using CSharpRef.SOLID.DIP_AfterChange;
+﻿using ExploreCSharp.SOLID.DIP_AfterChange;
 
 namespace ExploreCSharp.SOLID.DIP_AfterChange
 {
