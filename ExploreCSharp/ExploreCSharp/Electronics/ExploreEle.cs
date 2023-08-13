@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ExploreCSharp.Electronics
 {
-    public class Explore
+    public class ExploreEle
     {
-        public static void Swap(int a, int b)
+        public static void Swap(ref int a, ref int b)
         {
             Console.WriteLine($"Before swap: A{a} B:{b}");
             a = a ^ b;

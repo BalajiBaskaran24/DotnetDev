@@ -14,7 +14,8 @@ namespace ExploreCSharp
         {
 
             //Various swap methods
-            Electronics.Explore.Swap(1, 1);
+            int RefSample = 5;
+            Electronics.ExploreEle.Swap(ref RefSample, ref RefSample);
 
 
             //SOLIDSample sOLID = new SOLIDSample();
