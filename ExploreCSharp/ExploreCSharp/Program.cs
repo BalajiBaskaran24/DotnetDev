@@ -12,10 +12,12 @@ namespace ExploreCSharp
     {
         public static void Main(string[] args)
         {
+            //2D array methods
+            TwoDArray.TwoDArray.Starter2D();
 
             //Various swap methods
-            int RefSample = 5;
-            Electronics.ExploreEle.Swap(ref RefSample, ref RefSample);
+            //int RefSample = 5;
+            //Electronics.ExploreEle.Swap(ref RefSample, ref RefSample);
 
 
             //SOLIDSample sOLID = new SOLIDSample();
