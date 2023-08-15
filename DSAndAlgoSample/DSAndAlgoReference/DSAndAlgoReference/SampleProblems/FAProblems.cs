@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace DSAndAlgoReference.SampleProblems
 {
+    /// <summary>
+    /// Frequently asked problems
+    /// </summary>
     public class FAProblems
     {
         //Palindrome
         //Anagram
         //Fibonacci
-
-
-       
 
         /// <summary>
         /// Big O(n) With Memoization (Top-Down DP)
@@ -34,7 +34,6 @@ namespace DSAndAlgoReference.SampleProblems
             }
             return memo[n];
         }
-
 
         /// <summary>
         /// With Tabulation (Bottom-Up DP)

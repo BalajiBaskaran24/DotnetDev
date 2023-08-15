@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSAndAlgoReference.SampleProblems.Recursion;
+namespace DSAndAlgoReference.SampleProblems.Recursion.Striver;
 
 public class RecursionMethods
 {
@@ -64,7 +64,7 @@ public class RecursionMethods
     }
     public static void ReverseArrayOneParam(int index)
     {
-        if (index >= (n / 2))
+        if (index >= n / 2)
             return;
         Swap(ref Input[index], ref Input[n - index - 1]);
         index += 1;
@@ -83,7 +83,7 @@ public class RecursionMethods
     static string Ip = "Madam";
     public static bool CheckPalindrome(int index)
     {
-        if (index >= (Ip.Length / 2))
+        if (index >= Ip.Length / 2)
         {
             return true;
         }
@@ -268,12 +268,12 @@ public class RecursionMethods
             }
             else if (n % 10 == 1)
             {
-                remainder = (ip % temp) + 1;
+                remainder = ip % temp + 1;
             }
             factors *= 10; // incrementing factors for checking
                            // different locations such as ones,
                            // tens, hundreds places ones
-            count += ((ip / factors) * temp) + remainder;
+            count += ip / factors * temp + remainder;
             n = n / 10;
         }
         return count;
