@@ -4,8 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExploreCSharp
+namespace ExploreCSharp.Keywords
 {
+    /// <summary>
+    /// Class that compares the null check using == operator and .Equals or is null method usage
+    /// Keyword: is, not
+    /// </summary>
     public class Equals_EqualToOperator
     {
         //Comparison of .Equals and == operator
@@ -30,6 +34,17 @@ namespace ExploreCSharp
         public static void StarterEquals()
         {
             Equals_EqualToOperator sample = null;
+
+            if (sample is null)//Returns true for null
+            {
+
+            }
+
+            if (sample is not null)//Returns true for not null
+            {
+
+            }
+
             if (sample == null)
             {
                 Console.WriteLine("== operator returns null correctly");
@@ -39,7 +54,7 @@ namespace ExploreCSharp
                 Console.WriteLine("== operator fails to return null");
             }
 
-            if (object.Equals(sample, null))
+            if (Equals(sample, null))
             {
                 Console.WriteLine(".Equals operator returns null correctly");
             }

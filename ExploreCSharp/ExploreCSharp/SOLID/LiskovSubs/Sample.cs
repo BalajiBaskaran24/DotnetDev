@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExploreCSharp.SOLID
+namespace ExploreCSharp.SOLID.LiskovSubs
 {
-    public class SOLIDSample
+    public class Sample
     {
         public void TriggerL()
         {

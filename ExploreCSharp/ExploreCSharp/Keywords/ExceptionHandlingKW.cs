@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExploreCSharp
+namespace ExploreCSharp.Keywords
 {
+    /// <summary>
+    /// Sample class with all keywords used for exception
+    /// </summary>
     public class ExceptionHandlingKW
     {
         public ExceptionHandlingKW() { }

@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <Folder Include="Asynchronous\" />
+    <Folder Include="LINQ\" />
   </ItemGroup>
 
 </Project>

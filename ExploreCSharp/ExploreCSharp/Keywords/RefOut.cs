@@ -4,8 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExploreCSharp;
-internal class YieldSample
+namespace ExploreCSharp.Keywords;
+
+/// <summary>
+/// Ref and out keywords
+/// </summary>
+internal class RefOut
 {
 }
-

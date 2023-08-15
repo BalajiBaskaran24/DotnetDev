@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExploreCSharp
+namespace ExploreCSharp.Keywords
 {
     public class StaticKW
     {
@@ -59,7 +59,7 @@ namespace ExploreCSharp
         //    }
         //}
 
-}
+    }
 
 
 }

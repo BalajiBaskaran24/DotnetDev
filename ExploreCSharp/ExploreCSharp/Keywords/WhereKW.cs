@@ -1,24 +1,34 @@
-﻿namespace ExploreCSharp;
+﻿namespace ExploreCSharp.Keywords;
 public enum UserDefEnum
 { }
 
 public class UserDefClass
 { }
-public class WhereKeyword
+
+/// <summary>
+/// The where clause in a generic definition specifies constraints on the types 
+/// that are used as arguments for type parameters in a generic type, method, delegate,
+/// or local function. Constraints can specify interfaces, base classes, or require a 
+/// generic type to be a reference, value, or unmanaged type.
+/// </summary>
+public class WhereKW
 {
 
-    public WhereKeyword() { }
+    public WhereKW() { }
 
     public void WhereStarter()
     {
         //When a constraint is applied to a generic type parameter, an implicit identity or reference
         //conversion must exist from the concrete argument to the type of the constraint.
+
+        //There is no implicit reference conversion from UserDefClass to System.Enum
         //SampleEn<UserDefClass> sampleClass = new SampleEn<UserDefClass>();//Will throw error
+
         SampleEn<UserDefEnum> sampleenum = new SampleEn<UserDefEnum>();//no error
         SampleClass<UserDefClass> sampleClass = new SampleClass<UserDefClass>();
     }
 }
-public class SampleEn<T> where T : System.Enum
+public class SampleEn<T> where T : Enum
 {
 
 }

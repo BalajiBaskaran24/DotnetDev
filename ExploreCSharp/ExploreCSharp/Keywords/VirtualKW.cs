@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExploreCSharp;
+namespace ExploreCSharp.Keywords;
 /// <summary>
 /// The virtual keyword is used to modify a method, property, indexer, 
 /// or event declaration and allow for it to be overridden in a derived class.
@@ -27,6 +27,10 @@ class TestClass
             _y = y;
         }
 
+        /// <summary>
+        /// Virtual keyword usage
+        /// </summary>
+        /// <returns></returns>
         public virtual double Area()
         {
             return _x * _y;
