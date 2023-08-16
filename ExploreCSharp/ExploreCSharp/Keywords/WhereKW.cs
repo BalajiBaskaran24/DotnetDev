@@ -44,6 +44,7 @@ public class MyGenericClass<T> where T : IComparable<T>, new()
     T item = new T();
 }
 
+//-----------Constraint: Accepts Class which contains default constructor
 class ItemFactory<T> where T : new()
 {
     public T GetNewItem()
@@ -52,3 +53,28 @@ class ItemFactory<T> where T : new()
         return new T();
     }
 }
+
+/// <summary>
+/// If class contains any parameterized constructor then constructor with no parameters will not be created
+/// </summary>
+class SampleClassWithoutConstructor
+{
+    public SampleClassWithoutConstructor(int temp)
+    {
+
+    }
+}
+
+
+class GenericUsage
+{
+    public GenericUsage() { }
+
+    public void Method()
+    {
+        //ItemFactory will accept the type that has default constructor. Since SampleClassWithoutConstructor doesnt have
+        //default constructor it will throw error.
+        //ItemFactory<SampleClassWithoutConstructor> item = new ItemFactory<SampleClassWithoutConstructor>();
+    }
+}
+

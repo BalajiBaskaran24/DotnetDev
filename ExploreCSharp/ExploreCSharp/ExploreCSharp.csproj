@@ -16,6 +16,7 @@
   <ItemGroup>
     <Folder Include="Asynchronous\" />
     <Folder Include="LINQ\" />
+    <Folder Include="Generics\" />
   </ItemGroup>
 
 </Project>

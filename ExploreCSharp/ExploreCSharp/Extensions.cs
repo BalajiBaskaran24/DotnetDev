@@ -9,6 +9,7 @@ namespace ExploreCSharp
 {
     /// <summary>
     /// Class contains extension method
+    /// This class should be "static"
     /// </summary>
     public static class Extensions
     {
@@ -19,7 +20,7 @@ namespace ExploreCSharp
         /// <param name="input"></param>
         public static void ExtMethod(this SampleForExt extClass, int input)
         {
-
+            
         }
 
         //This will throw error. Method should be static
