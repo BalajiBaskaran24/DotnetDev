@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ExploreCSharp.SOLID;
 using ExploreCSharp.DependencyInjection.VSExample;
+using ExploreCSharp.Keywords;
 
 namespace ExploreCSharp
 {
@@ -12,8 +13,11 @@ namespace ExploreCSharp
     {
         public static void Main(string[] args)
         {
+            //Var and dynamic keyword usage
+            VarDynamic.Usage();
+
             //2D array methods
-            TwoDArray.TwoDArray.Starter2D();
+            //TwoDArray.TwoDArray.Starter2D();
 
             //Various swap methods
             //int RefSample = 5;
