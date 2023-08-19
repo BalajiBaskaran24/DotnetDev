@@ -4,18 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSAndAlgoReference.SampleProblems.Array
+namespace DSAndAlgoReference.SampleProblems.Arrays
 {
-    internal class AlphaBeta
+    public class AlphaBeta
     {
         //If number k appears exactly k times - Alpha
         //If number k appears exactly k times and starts from kth index
 
-        //Input
-        //3 3 2 2 5 5 5 5 5 2 2 1
-        public void Solution()
+        public Tuple<int, int> Solution(List<int> input)
         {
-            List<int> input = new List<int>() { 3, 3, 2, 2, 5, 5, 5, 5, 5, 2, 2, 1 };
             int Counter = 1, Alpha = 0, Beta = 0;
             for (int i = 0; i < input.Count - 1; i++)
             {
@@ -28,11 +25,12 @@ namespace DSAndAlgoReference.SampleProblems.Array
                     if (Counter == input[i])
                     {
                         Alpha += 1;
-                        if ((Counter - i) == input[i])
+                        if ((i - (Counter - 1)) == input[i])
                         {
                             Beta += 1;
                         }
                     }
+                    Counter = 1;
                 }
             }
             //1
@@ -47,7 +45,7 @@ namespace DSAndAlgoReference.SampleProblems.Array
                     Beta += 1;
                 }
             }
-            Console.WriteLine(Alpha - Beta);
+            return new Tuple<int, int>(Alpha, Beta);
         }
     }
 }
