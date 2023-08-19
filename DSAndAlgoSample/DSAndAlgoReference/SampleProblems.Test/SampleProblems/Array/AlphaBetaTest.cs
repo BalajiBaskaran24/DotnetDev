@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExploreCSharp.KLAQuestions
+namespace SampleProblems.Test.SampleProblems.Array
 {
-    public class FirstRoundQuestions
+    public class AlphaBetaTest
     {
-
-        //Question1: Alpha, beta
     }
 }
