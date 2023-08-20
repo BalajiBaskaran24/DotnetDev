@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace DSAndAlgoReference.SampleProblems.Arrays;
 
+/// <summary>
+/// Level: Easy
+/// If number k appears exactly k times - Alpha
+/// If number k appears exactly k times and starts from kth index
+/// </summary>
 public class AlphaBeta
 {
-    //If number k appears exactly k times - Alpha
-    //If number k appears exactly k times and starts from kth index
-
     public Tuple<int, int> Solution(List<int> input)
     {
         int Counter = 1, Alpha = 0, Beta = 0;
