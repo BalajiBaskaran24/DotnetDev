@@ -113,5 +113,7 @@ public class SetMatrixZeros
     #endregion
 
     #region Optimal approach
+    //Use first row and column for tracking similar to better approach
+    //for 0*0 have seperate variable. Since its common for row and column
     #endregion
 }

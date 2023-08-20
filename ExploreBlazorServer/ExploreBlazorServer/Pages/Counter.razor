@@ -1,0 +1,34 @@
+﻿@page "/counter"
+@page "/counter/{StarterValue:int}"
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+
+    [Parameter]
+    public int StarterValue { get; set; }
+
+    //We cannot assign the value directly to InitialValue parameter or we cannot use constructor. Need to
+    //use below method
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();//Optional
+        currentCount = StarterValue;
+    }
+    //Use OnParametersSetAsync for DB call or other call which should be asynchronous 
+
+
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
