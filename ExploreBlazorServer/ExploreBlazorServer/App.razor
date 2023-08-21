@@ -7,7 +7,9 @@
         @*If the given route is not present*@
         <PageTitle>Not found</PageTitle>
         <LayoutView Layout="@typeof(MainLayout)">
-            <p role="alert">Sorry, there's nothing at this address.</p>
+            @*Instead of below tag we can also provide an error component with required styles and functionalities*@
+            @*<p role="alert">Sorry, there's nothing at this address.</p>*@
+            <ExploreBlazorServer.Pages.CustomError></ExploreBlazorServer.Pages.CustomError>
         </LayoutView>
     </NotFound>
 </Router>

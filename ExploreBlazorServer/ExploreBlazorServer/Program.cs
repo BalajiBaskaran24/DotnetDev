@@ -7,7 +7,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
-builder.Services.AddSingleton<WeatherForecastService>();
+
+//To access WeatherForecastService in any of the razor page
+//Refer fetch data for usage
+builder.Services.AddTransient<WeatherForecastService>();
+
+//builder.Services.AddSingleton<IDummyData, DummyData>();//Same instance across all users and session
+//builder.Services.AddScoped<IDummyData, DummyData>();//New instance per session
+//builder.Services.AddTransient<IDummyData, DummyData>();//Every time when this is called, a new instance is created irrespetive of same session or different session
+builder.Services.AddTransient<DummyData>();
 
 var app = builder.Build();
 
