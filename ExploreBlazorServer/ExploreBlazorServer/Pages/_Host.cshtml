@@ -20,6 +20,7 @@
     @*Below line is used to render the application. Here App represents App.razor file*@
     <component type="typeof(App)" render-mode="ServerPrerendered" />
 
+    @*Below tag will be rendered where exception is thrown from any razor component*@
     <div id="blazor-error-ui">
         <environment include="Staging,Production">
             An error has occurred. This application may no longer respond until reloaded.

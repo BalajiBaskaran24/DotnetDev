@@ -7,15 +7,19 @@
       "sslPort": 44393
     }
   },
+
+  //All below profiles are only for development purpose. Not for production use.
   "profiles": {
     "http": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:5079",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      "applicationUrl": "http://localhost:5079" //,
+      //This variable will exactly point out the source code line number where exception occurs. By
+      //removing this we can get only the error but not the exact reason.
+      //"environmentVariables": {
+      //  "ASPNETCORE_ENVIRONMENT": "Development"
+      //}
     },
     "https": {
       "commandName": "Project",
