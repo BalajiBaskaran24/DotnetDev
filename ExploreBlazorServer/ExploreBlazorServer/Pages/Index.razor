@@ -6,13 +6,30 @@
 @*Above statement is used to access the data using data access layer. Example of DI service*@
 @*Above interface is injected using DI in program.cs file*@
 
+
+@inject ILogger Log
+
+@*To get the logger of this page type*@
+@inject ILogger<Index> LogIndex
+
+@code
+{
+    public Index()
+    {
+        //Below line will throw error 
+        LogIndex.LogInformation("Index construcctor");
+    }
+}
+
+
 <PageTitle>Index</PageTitle>
 
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
-Your random number is @data.GetUserAge()<br />
+Your random number is @data.GetUserAge()
+<br />
 
 
 
