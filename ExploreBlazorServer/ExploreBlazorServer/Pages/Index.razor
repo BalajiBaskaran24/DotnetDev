@@ -16,9 +16,20 @@
 {
     public Index()
     {
-        //Below line will throw error 
-        LogIndex.LogInformation("Index construcctor");
+        //Below line will throw error
+        //LogIndex.LogInformation("Index construcctor");
     }
+
+    /// <summary>
+    /// This method will be called twice during inital rendering, later it will be called only once
+    /// </summary>
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        LogIndex.LogInformation("Index on initialized");//This will not throw any error
+    }
+
+    
 }
 
 
