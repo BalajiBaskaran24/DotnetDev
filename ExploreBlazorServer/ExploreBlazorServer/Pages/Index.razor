@@ -6,8 +6,8 @@
 @*Above statement is used to access the data using data access layer. Example of DI service*@
 @*Above interface is injected using DI in program.cs file*@
 
-
-@inject ILogger Log
+@inject ILoggerFactory LogFact
+@*@inject ILogger Log*@
 
 @*To get the logger of this page type*@
 @inject ILogger<Index> LogIndex
@@ -19,6 +19,7 @@
         //Below line will throw error
         //LogIndex.LogInformation("Index construcctor");
     }
+    private ILogger LogNonGen = null;
 
     /// <summary>
     /// This method will be called twice during inital rendering, later it will be called only once
@@ -26,10 +27,11 @@
     protected override void OnInitialized()
     {
         base.OnInitialized();
+        LogNonGen = LogFact.CreateLogger("UsingILoggerInterface");
         LogIndex.LogInformation("Index on initialized");//This will not throw any error
     }
 
-    
+
 }
 
 
