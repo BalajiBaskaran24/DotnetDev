@@ -10,6 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 //builder.Logging.AddDebug();
 //builder.Logging.SetMinimumLevel(LogLevel.Debug);
 
+//For adding configuration
+//builder.Configuration.AddConfiguration()
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
