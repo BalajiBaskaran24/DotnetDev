@@ -1,6 +1,41 @@
 ﻿@page "/"
 @*Above line indicates that its main route localhost:portnumber will launch this component*@
 
+@*Below table uses css class from bootstrap library*@
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>John</td>
+            <td>Cena</td>
+            <td>@@wwe</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Under</td>
+            <td>Taker</td>
+            <td>@@wwe</td>
+        </tr>
+    </tbody>
+
+</table>
+
+
+
 @*@inject Data.IDummyData data*@
 @inject Data.DummyData data
 @*Above statement is used to access the data using data access layer. Example of DI service*@
