@@ -26,6 +26,8 @@ builder.Services.AddTransient<WeatherForecastService>();
 //builder.Services.AddTransient<IDummyData, DummyData>();//Every time when this is called, a new instance is created irrespetive of same session or different session
 builder.Services.AddTransient<DummyData>();
 
+builder.Services.AddScoped<ICounterService, CounterService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
