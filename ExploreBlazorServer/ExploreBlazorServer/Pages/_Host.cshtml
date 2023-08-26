@@ -1,4 +1,4 @@
-﻿@page "/" 
+﻿@page "/"
 @*slash indicates that its Starter page and called by default*@
 @using Microsoft.AspNetCore.Components.Web
 @namespace ExploreBlazorServer.Pages
@@ -6,16 +6,20 @@
 
 <!DOCTYPE html>
 <html lang="en">
+@*Standard html tags*@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    @*Below line indicates the root of our website*@
     <base href="~/" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
     <link href="ExploreBlazorServer.styles.css" rel="stylesheet" />
-    <link rel="icon" type="image/png" href="favicon.png"/>
+    <link rel="icon" type="image/png" href="favicon.png" />
     <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
+@*End of standard html tags*@
+
 <body>
     @*Below line is used to render the application. Here App represents App.razor file*@
     <component type="typeof(App)" render-mode="ServerPrerendered" />
@@ -32,7 +36,7 @@
         <a class="dismiss">🗙</a>
     </div>
 
-    @*This is for signalR connection*@
+    @*Javascript file for signalR connection*@
     <script src="_framework/blazor.server.js"></script>
 </body>
 </html>
