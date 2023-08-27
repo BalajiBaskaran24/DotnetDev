@@ -1,4 +1,7 @@
-﻿@page "/counter"
+﻿@*Below line is one way to assign layout to component*@
+@layout SimpleLayout
+
+@page "/counter"
 @page "/counter/{StarterValue:int}"
 
 @using ExploreBlazorServer.Data
@@ -8,7 +11,7 @@
 
 <h1>Counter</h1>
 
-<p role="status">Current count: @currentCount</p>
+<p @onmouseover="IncrementCount" role="status">Current count: @currentCount</p>
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 

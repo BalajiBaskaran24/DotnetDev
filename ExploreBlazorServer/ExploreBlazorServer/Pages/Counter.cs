@@ -12,10 +12,10 @@ namespace ExploreBlazorServer.Pages
         //    Log = log;
         //}
 
-
         [Parameter]
         public int StarterValue { get; set; }
 
+        //Inject - value injected by service provider during initialization. Based on configuration using DI
         [Inject]
         public ILogger<Counter> Log { get; set; }
 
