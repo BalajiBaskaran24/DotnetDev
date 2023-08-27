@@ -1,6 +1,10 @@
 ﻿@page "/"
 @*Above line indicates that its main route localhost:portnumber will launch this component*@
 
+@*Below line is a sample for passing parameters for component*@
+<ParameterSample Param1="5"></ParameterSample>
+<ParameterSample></ParameterSample>
+
 @*Below table uses css class from bootstrap library*@
 <table class="table table-striped">
     <thead class="table-dark">
@@ -47,7 +51,7 @@
 @*To get the logger of this page type*@
 @inject ILogger<Index> LogIndex
 
-@*To get the configuration data Appsettings or user secrets*@
+@*To get the configuration data, i.e data from Appsettings or user secrets*@
 @inject IConfiguration ConfData
 
 @code

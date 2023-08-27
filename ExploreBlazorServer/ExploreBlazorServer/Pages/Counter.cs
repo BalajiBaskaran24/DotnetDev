@@ -5,7 +5,22 @@ namespace ExploreBlazorServer.Pages
     public partial class Counter
     {
         private int currentCount = 0;
+        private string VoteStatus = "Not decided";
 
+        public void OnVoteSuccessEvent(string data)
+        {
+            switch (data)
+            {
+                case "Approved":
+                    VoteStatus = "Success";
+                    break;
+                case "Rejected":
+                    VoteStatus = "Rejection";
+                    break;
+                default:
+                    break;
+            }
+        }
 
         //public Counter(ILogger<Counter> log)
         //{
