@@ -1,0 +1,37 @@
+﻿<h2>UserComponent</h2>
+<button class="btn btn-primary" @onclick="ToggleShowFix">
+    Fix
+</button>
+
+@if(showFix)
+{
+    <Namechoice FirstName="@FirstName"
+        LastName="@LastName"
+    OnNameTypeSelected="HandleOnNameTypeSelected"></Namechoice>
+}
+
+@code {
+    private string userName = "";
+    private bool showFix = false;
+
+    [Parameter]
+    public string FirstName { get; set; }
+
+    [Parameter]
+    public string LastName { get; set; }
+
+    [Parameter]
+    public string Message { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        userName = $"{FirstName} {LastName}";
+    }
+
+    public void ToggleShowFix()
+    {
+        
+    }
+
+}
