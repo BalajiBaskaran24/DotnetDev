@@ -1,24 +1,45 @@
 ﻿@*For the given input name show all different possible name format and
 modify to any one format*@
 
-<p>
-    @($"{FirstName} {LastName}")
+<p @onclick="(()=>OnNameSelected(normalType))">
+    @normalType
 </p>
-<p>
-    @($"{LastName}, {FirstName}")
+<p @onclick="(()=>OnNameSelected(reversedType))">
+    @reversedType
 </p>
-<p>
-    @($"{FirstName.Substring(0, 1)}. {LastName}")
+<p @onclick="(()=>OnNameSelected(initialType))">
+    @initialType
 </p>
-<p>
-    @($"{FirstName.Substring(0, 1)}{LastName}")
+<p @onclick="(()=>OnNameSelected(emailType))">
+    @emailType
 </p>
 
 @code {
+    private string normalType = "";
+    private string reversedType = "";
+    private string initialType = "";
+    private string emailType = "";
 
     [Parameter]
     public string FirstName { get; set; }
 
     [Parameter]
     public string LastName { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnNameTypeSelected { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        normalType = $"{FirstName} {LastName}";
+        reversedType = $"{LastName}, {FirstName}";
+        initialType = $"{FirstName.Substring(0, 1)}.{LastName}";
+        emailType = $"{FirstName.Substring(0, 1)}{LastName}";
+    }
+
+    public void OnNameSelected(string selectedName)
+    {
+        OnNameTypeSelected.InvokeAsync(selectedName);
+    }
 }
