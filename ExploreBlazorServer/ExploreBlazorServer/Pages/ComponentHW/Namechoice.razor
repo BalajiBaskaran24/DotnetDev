@@ -1,0 +1,24 @@
+﻿@*For the given input name show all different possible name format and
+modify to any one format*@
+
+<p>
+    @($"{FirstName} {LastName}")
+</p>
+<p>
+    @($"{LastName}, {FirstName}")
+</p>
+<p>
+    @($"{FirstName.Substring(0, 1)}. {LastName}")
+</p>
+<p>
+    @($"{FirstName.Substring(0, 1)}{LastName}")
+</p>
+
+@code {
+
+    [Parameter]
+    public string FirstName { get; set; }
+
+    [Parameter]
+    public string LastName { get; set; }
+}
