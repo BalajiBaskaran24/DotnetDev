@@ -27,6 +27,10 @@ modify to any one format*@
     [Parameter]
     public string LastName { get; set; }
 
+
+    /// <summary>
+    /// To indicate the parent component regarding the name selected by user
+    /// </summary>
     [Parameter]
     public EventCallback<string> OnNameTypeSelected { get; set; }
 
