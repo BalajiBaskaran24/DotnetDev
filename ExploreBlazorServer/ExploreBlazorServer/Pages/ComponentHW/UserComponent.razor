@@ -1,15 +1,15 @@
-﻿<h2>UserComponent</h2>
+﻿<h2>@userName</h2>
 <button class="btn btn-primary" @onclick="ToggleShowFix">
     Fix
 </button>
 
-@if(showFix)
+@if (showFix)
 {
     <Namechoice FirstName="@FirstName"
-        LastName="@LastName"
-    OnNameTypeSelected="HandleOnNameTypeSelected"></Namechoice>
+            LastName="@LastName"
+            OnNameTypeSelected="HandleOnNameTypeSelected"></Namechoice>
 }
-
+<h3>@Message</h3>
 @code {
     private string userName = "";
     private bool showFix = false;
@@ -29,9 +29,19 @@
         userName = $"{FirstName} {LastName}";
     }
 
+    /// <summary>
+    /// Subscribes OnNameTypeSelected of child component and updates the 
+    /// Fixed name as per the user selection in child component
+    /// </summary>
+    /// <param name="newName"></param>
+    private void HandleOnNameTypeSelected(string newName)
+    {
+        userName = newName;
+    }
+
     public void ToggleShowFix()
     {
-        
+        showFix = !showFix;
     }
 
 }
