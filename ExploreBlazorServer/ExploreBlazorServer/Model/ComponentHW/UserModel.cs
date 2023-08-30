@@ -1,5 +1,6 @@
 ﻿namespace ExploreBlazorServer.Model.ComponentHW;
 
+//Component section assignment
 public class UserModel
 {
     public string FirstName { get; set; }
