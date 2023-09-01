@@ -1,7 +1,38 @@
-﻿<h3>UserForm</h3>
-<EditForm>
+﻿@using ExploreBlazorServer.Model.FormSection;
 
+@page "/userform"
+<h3>UserForm</h3>
+<p>
+    @formResults
+</p>
+<p>
+    First Name:@person.FirstName
+</p>
+<p>
+    Last Name:@person.SecondName
+</p>
+
+@*There will not be any verb associated with this. This is not http 
+get/post/put. Its via signalR connection*@
+
+<EditForm Model="@person" OnValidSubmit="HandleValidSubmit">
+    <InputText id="firstName" @bind-Value="person.FirstName" />
+    <InputText id="secondName" @bind-Value="person.SecondName" />
+    <button class="btn btn-primary" type="submit">Submit</button>
 </EditForm>
-@code {
 
+
+
+@code 
+{
+    private PersonFormModel person = new();
+    private string formResults = "";
+
+    /// <summary>
+    /// Event triggered when above form submission is successful
+    /// </summary>
+    private void HandleValidSubmit()
+    {
+        formResults = $"{person.FirstName} {person.SecondName} was just created";
+    }
 }
