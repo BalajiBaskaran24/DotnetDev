@@ -12,18 +12,38 @@
     Last Name:@person.SecondName
 </p>
 
-@*There will not be any verb associated with this. This is not http 
+@*There will not be any verb associated with this. This is not http
 get/post/put. Its via signalR connection*@
-
 <EditForm Model="@person" OnValidSubmit="HandleValidSubmit">
-    <InputText id="firstName" @bind-Value="person.FirstName" />
-    <InputText id="secondName" @bind-Value="person.SecondName" />
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <p>
+        <label>
+            First Name:
+            <InputText id="firstName" @bind-Value="person.FirstName" />
+        </label>
+    </p>
+    <p>
+        <label>
+            <InputText id="secondName" @bind-Value="person.SecondName" />
+        </label>
+    </p>
+    <p>
+        <label>
+            <InputNumber id="age" @bind-Value="person.Age" />
+        </label>
+    </p>
+    <p>
+        <label>
+            Give concent:
+            <InputCheckbox @bind-Value="person.GaveConcent"/>
+        </label>
+    </p>
     <button class="btn btn-primary" type="submit">Submit</button>
 </EditForm>
 
 
-
-@code 
+@code
 {
     private PersonFormModel person = new();
     private string formResults = "";

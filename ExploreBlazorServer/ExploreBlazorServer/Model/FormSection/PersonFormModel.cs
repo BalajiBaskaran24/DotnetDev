@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿//Below namespace is for built in validation
+using System.ComponentModel.DataAnnotations;
 
 namespace ExploreBlazorServer.Model.FormSection
 {
@@ -15,7 +16,7 @@ namespace ExploreBlazorServer.Model.FormSection
         public int Age { get; set; }
 
         [Required]
-        [Range(typeof(bool), "true", "true", ErrorMessage = "This is must")]
+        [Range(typeof(bool), "true", "true", ErrorMessage = "Concent is must")]
         public bool GaveConcent { get; set; }
     }
 }
