@@ -1,0 +1,22 @@
+﻿@page "/cascadedemo"
+
+@using ExploreBlazorServer.Model.AdvancedForm;
+
+<h3>CascadeDemo</h3>
+
+<EditForm Model="@cascade">
+
+</EditForm>
+
+@code {
+    private CascadeModel cascade = new CascadeModel();
+    private Dictionary<int, string> mediaTypes = new Dictionary<int, string>();
+    private Dictionary<int, string> subTypes = new Dictionary<int, string>();
+
+    public CascadeDemo()
+    {
+        mediaTypes.Add(1, "Movies");
+        mediaTypes.Add(2, "TV Shows");
+        mediaTypes.Add(3, "Books");
+    }
+}
