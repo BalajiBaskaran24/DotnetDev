@@ -5,7 +5,22 @@
 <h3>CascadeDemo</h3>
 
 <EditForm Model="@cascade">
-
+    @*select is used to create Drop down list *@
+    <select @onchange="HandleFirstDropDownChange">
+        <option value="">Choose media type</option>
+        @foreach (var m in mediaTypes)
+        {
+            <option value="@m.Key">@m.Value</option>
+        }
+    </select>
+    @if (subTypes.Count > 0)
+    {
+        <select @onchange="HandleSecondDropDownChange">
+            <option value="">Select Media Type...
+                <option value="@m."
+            </option>
+        </select>
+    }
 </EditForm>
 
 @code {
@@ -18,5 +33,47 @@
         mediaTypes.Add(1, "Movies");
         mediaTypes.Add(2, "TV Shows");
         mediaTypes.Add(3, "Books");
+    }
+
+    private void HandleFirstDropDownChange(ChangeEventArgs args)
+    {
+        //Clear selection if input is empty
+        if (string.IsNullOrWhiteSpace(args.Value.ToString()))
+        {
+            cascade.FirstId = 0;
+            cascade.SecondId = 0;
+            subTypes = new Dictionary<int, string>();
+            return;
+        }
+        cascade.FirstId = int.Parse(args.Value.ToString());
+
+        switch (cascade.FirstId)
+        {
+            case 1:
+                subTypes = new Dictionary<int, string>();
+                subTypes.Add(1, "Movie opt 1");
+                subTypes.Add(2, "Movie opt 2");
+                subTypes.Add(3, "Movie opt 3");
+                break;
+            case 2:
+                subTypes = new Dictionary<int, string>();
+                subTypes.Add(1, "TV opt 1");
+                subTypes.Add(2, "TV opt 2");
+                subTypes.Add(3, "TV opt 3");
+                break;
+            case 3:
+                subTypes = new Dictionary<int, string>();
+                subTypes.Add(1, "Books opt 1");
+                subTypes.Add(2, "Books opt 2");
+                subTypes.Add(3, "Books opt 3");
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void HandleSecondDropDownChange(ChangeEventArgs args)
+    {
+        
     }
 }
