@@ -15,10 +15,12 @@
     </select>
     @if (subTypes.Count > 0)
     {
-        <select @onchange="HandleSecondDropDownChange">
-            <option value="">Select Media Type...
-                <option value="@m."
-            </option>
+        <select id="secondDropDown" @onchange="HandleSecondDropDownChange">
+            <option value="">Select Media Type...</option>
+            @foreach (var m in subTypes)
+            {
+                <option value="@m.Key">@m.Value</option>
+            }
         </select>
     }
 </EditForm>
@@ -74,6 +76,10 @@
 
     private void HandleSecondDropDownChange(ChangeEventArgs args)
     {
-        
+        if (string.IsNullOrWhiteSpace(args.Value.ToString()))
+        {
+            return;
+        }
+        cascade.SecondId = int.Parse(args.Value.ToString());
     }
 }
