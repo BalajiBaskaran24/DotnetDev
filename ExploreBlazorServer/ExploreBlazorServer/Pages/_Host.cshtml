@@ -38,5 +38,12 @@
 
     @*Javascript file for signalR connection*@
     <script src="_framework/blazor.server.js"></script>
+    <script type="text/javascript">
+        function ResetsecondDropDown() {
+            if (document.getElementById('secondDropDown') !==null) {
+            document.getElementById('secondDropDown').selectedIndex = 0; 
+      }
+        }
+        </script>
 </body>
 </html>
