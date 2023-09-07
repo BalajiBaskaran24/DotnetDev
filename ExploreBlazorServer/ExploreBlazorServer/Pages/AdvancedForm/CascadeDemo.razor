@@ -1,6 +1,8 @@
 ﻿@page "/cascadedemo"
 
 @using ExploreBlazorServer.Model.AdvancedForm;
+@using Microsoft.JSInterop;
+@inject IJSRuntime JSRuntime;
 
 <h3>CascadeDemo</h3>
 
@@ -37,14 +39,17 @@
         mediaTypes.Add(3, "Books");
     }
 
-    private void HandleFirstDropDownChange(ChangeEventArgs args)
+    private async void HandleFirstDropDownChange(ChangeEventArgs args)
     {
+        //Invoke JS interop
+        await JSRuntime.InvokeAsync<object>("ResetSecondDropDown", new object[0]);
+        cascade.SecondId = 0;
+        subTypes = new Dictionary<int, string>();
+
         //Clear selection if input is empty
         if (string.IsNullOrWhiteSpace(args.Value.ToString()))
         {
             cascade.FirstId = 0;
-            cascade.SecondId = 0;
-            subTypes = new Dictionary<int, string>();
             return;
         }
         cascade.FirstId = int.Parse(args.Value.ToString());
