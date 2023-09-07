@@ -1,0 +1,23 @@
+﻿@page "/fileuploads"
+
+<InputFile OnChange="@LoadFiles" multiple />
+
+@*Equivalent html for above line*@
+@*<input multiple="" type="file" _bl_2="">*@
+
+
+
+@code
+{
+    private void LoadFiles(InputFileChangeEventArgs e)
+    {
+        Console.WriteLine($"Uploaded {e.FileCount} file");
+        FileContentRead(e);
+    }
+
+    private async void FileContentRead(InputFileChangeEventArgs e)
+    {
+        await using FileStream fs = new("", FileMode.Create);
+        await e.File.OpenReadStream().CopyToAsync(fs);
+    }
+}
