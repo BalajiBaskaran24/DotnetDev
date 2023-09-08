@@ -6,6 +6,13 @@
 @*<input multiple="" type="file" _bl_2="">*@
 
 
+@*Below sample is not working. Check whether nuget package and js file is required or not*@
+<div class="drag-drop-zone">
+    <InputFile OnChange="@DragDropLoad">
+
+    </InputFile>
+    @dragdropstatus
+</div>
 
 @code
 {
@@ -20,4 +27,11 @@
         await using FileStream fs = new("", FileMode.Create);
         await e.File.OpenReadStream().CopyToAsync(fs);
     }
+
+    public string dragdropstatus = "";
+    private void DragDropLoad(InputFileChangeEventArgs e)
+    {
+        Console.WriteLine("Drag drop load event");
+    }
+
 }
