@@ -10,7 +10,11 @@
         <label>
             Type of MS:
             <InputSelect @bind-Value="order.TypeofMilkshake">
-
+                <option value="">Select ms type</option>
+                @foreach(var t in msTypes)
+                {
+                    <option value="@t">@t</option>
+                }
             </InputSelect>
         </label>
     </p>
@@ -20,6 +24,13 @@
     private MilkshakeOrderModel order = new MilkshakeOrderModel();
     private List<string> msTypes;
     private List<string> msSizes;
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+        msTypes = dataService.GetMSType();
+        msSizes = dataService.GetMSSize();
+    }
 
     public MilkshakeOrderSheet()
     {
