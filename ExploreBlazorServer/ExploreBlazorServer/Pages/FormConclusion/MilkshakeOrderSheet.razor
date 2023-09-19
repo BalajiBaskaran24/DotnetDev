@@ -1,0 +1,28 @@
+﻿@page "/milkshakeordersheet"
+@inject IDataAccessService dataService
+@using ExploreBlazorServer.Data.FormConclusion;
+@using ExploreBlazorServer.Model.FormConclusion;
+
+<h3>MilkshakeOrderSheet</h3>
+
+<EditForm Model="@order">
+    <p>
+        <label>
+            Type of MS:
+            <InputSelect @bind-Value="order.TypeofMilkshake">
+
+            </InputSelect>
+        </label>
+    </p>
+</EditForm>
+
+@code {
+    private MilkshakeOrderModel order = new MilkshakeOrderModel();
+    private List<string> msTypes;
+    private List<string> msSizes;
+
+    public MilkshakeOrderSheet()
+    {
+
+    }
+}

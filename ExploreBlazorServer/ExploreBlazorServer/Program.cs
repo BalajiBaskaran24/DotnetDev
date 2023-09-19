@@ -1,4 +1,5 @@
 using ExploreBlazorServer.Data;
+using ExploreBlazorServer.Data.FormConclusion;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 
@@ -27,6 +28,8 @@ builder.Services.AddTransient<WeatherForecastService>();
 builder.Services.AddTransient<DummyData>();
 
 builder.Services.AddScoped<ICounterService, CounterService>();
+
+builder.Services.AddSingleton<IDataAccessService, DataAccessService>();
 
 var app = builder.Build();
 
