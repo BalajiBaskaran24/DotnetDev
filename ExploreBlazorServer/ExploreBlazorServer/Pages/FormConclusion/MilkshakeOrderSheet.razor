@@ -5,19 +5,53 @@
 
 <h3>MilkshakeOrderSheet</h3>
 
-<EditForm Model="@order">
+<EditForm Model="@order" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
     <p>
         <label>
             Type of MS:
+            @*@bind - For data binding. Refer document, section: "Data binding" for more info*@
             <InputSelect @bind-Value="order.TypeofMilkshake">
                 <option value="">Select ms type</option>
-                @foreach(var t in msTypes)
+                @foreach (var t in msTypes)
                 {
                     <option value="@t">@t</option>
                 }
             </InputSelect>
         </label>
     </p>
+    <p>
+        <label>
+            Size of MS:
+            <InputSelect @bind-Value="order.SizeofMilkshake">
+                <option value="">Select ms size</option>
+                @foreach (var t in msSizes)
+                {
+                    <option value="@t">@t</option>
+                }
+            </InputSelect>
+        </label>
+    </p>
+    <p>
+        <label>
+            Name for order:
+            <InputText @bind-Value="order.OrderName" />
+        </label>
+    </p>
+    <p>
+        <label>
+            Order quantity:
+            <InputNumber @bind-Value="order.Quantity" />
+        </label>
+    </p>
+    <p>
+        <label>
+            Add whipped cream:
+            <InputCheckbox @bind-Value="order.AddWhippedIceCream" />
+        </label>
+    </p>
+    <button class="btn btn-outline-primary" type="submit">Order Now</button>
 </EditForm>
 
 @code {
@@ -36,4 +70,10 @@
     {
 
     }
+
+    private void HandleValidSubmit()
+    {
+        Console.WriteLine("Order successful");
+    }
+
 }
