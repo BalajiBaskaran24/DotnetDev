@@ -11,12 +11,17 @@ namespace DSAndAlgoReference.Hashing.CollisionHandling
 
     public class ChainedHashTable<K, V>
     {
+        /// <summary>
+        /// Size of hash table
+        /// </summary>
         private readonly int _buckets;
+
         private readonly LinkedList<KeyValuePair<K, V>>[] _table;
         
         public ChainedHashTable(int buckets = 10)
         {
             _buckets = buckets;
+            //Each index in hash table contains list<keyvaluepair>
             _table = new LinkedList<KeyValuePair<K, V>>[buckets];
             for (int i = 0; i < buckets; i++)
             {
@@ -24,12 +29,18 @@ namespace DSAndAlgoReference.Hashing.CollisionHandling
             }
         }
 
+        /// <summary>
+        /// Add element to hash table
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        /// <exception cref="ArgumentException"></exception>
         public void Add(K key, V value)
         {
-            int index = GetIndex(key);
+            int index = HashFunction(key);
             foreach (var kvp in _table[index])
             {
-                if (kvp.Key.Equals(key))
+                if (kvp.Key.Equals(key))//Same key
                 {
                     throw new ArgumentException("Duplicate key");
                 }
@@ -38,9 +49,15 @@ namespace DSAndAlgoReference.Hashing.CollisionHandling
             _table[index].AddLast(new KeyValuePair<K, V>(key, value));
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public bool TryGetValue(K key, out V value)
         {
-            int index = GetIndex(key);
+            int index = HashFunction(key);
             foreach (var kvp in _table[index])
             {
                 if (kvp.Key.Equals(key))
@@ -54,9 +71,14 @@ namespace DSAndAlgoReference.Hashing.CollisionHandling
             return false;
         }
 
+        /// <summary>
+        /// Removes element from hash table
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
         public bool Remove(K key)
         {
-            int index = GetIndex(key);
+            int index = HashFunction(key);
             for (LinkedListNode<KeyValuePair<K, V>> node = _table[index].First; node != null; node = node.Next)
             {
                 if (node.Value.Key.Equals(key))
@@ -65,11 +87,15 @@ namespace DSAndAlgoReference.Hashing.CollisionHandling
                     return true;
                 }
             }
-
             return false;
         }
 
-        private int GetIndex(K key)
+        /// <summary>
+        /// Returns hash code for the given key
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        private int HashFunction(K key)
         {
             return (key.GetHashCode() & int.MaxValue) % _buckets;
         }

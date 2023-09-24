@@ -24,6 +24,9 @@ public class Program
     {
         Console.Clear();
 
+        //Hashing 
+        LLChainingHelper.Starter();
+
 
         int t = 0;
         IList<IList<int>> ans = new List<IList<int>>();
@@ -61,7 +64,7 @@ public class Program
         FAProblems.Fibonacci_Mem(10);
         Strings.MinimumDeleteSum("delete", "leet");
 
-        LLChainingHelper.Starter();
+        
 
         List<int> IntLst = new List<int>();
         List<int>[] ArrayofList = new List<int>[10];
