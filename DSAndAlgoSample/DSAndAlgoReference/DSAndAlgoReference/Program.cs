@@ -2,6 +2,7 @@
 using DSAndAlgoReference;
 using DSAndAlgoReference.Hashing.CollisionHandling;
 using DSAndAlgoReference.SampleProblems;
+using DSAndAlgoReference.SampleProblems.Arrays;
 using DSAndAlgoReference.SampleProblems.DynamicProgramming;
 using DSAndAlgoReference.SampleProblems.Recursion;
 using DSAndAlgoReference.SampleProblems.Recursion.Striver;
@@ -19,10 +20,13 @@ public class Program
 {
 
 
-    
+
     public static void Main(string[] args)
     {
         Console.Clear();
+
+        SmallestMissingNumber d = new SmallestMissingNumber();
+        d.FindSmallestMissingNumber(new int[10]);
 
         //Hashing 
         LLChainingHelper.Starter();
@@ -64,7 +68,7 @@ public class Program
         FAProblems.Fibonacci_Mem(10);
         Strings.MinimumDeleteSum("delete", "leet");
 
-        
+
 
         List<int> IntLst = new List<int>();
         List<int>[] ArrayofList = new List<int>[10];
