@@ -16,5 +16,17 @@ namespace EFCore_Models.Model
         public string ExecutionIndex { get; set; }
 
         public string RelativeFolderPath { get; set; }
+
+        public Execution()
+        {
+
+        }
+
+        public Execution(int execId, string exeIndex, string relFolderPath)
+        {
+            ExecutionId = execId;
+            ExecutionIndex = exeIndex;
+            RelativeFolderPath = relFolderPath;
+        }
     }
 }
