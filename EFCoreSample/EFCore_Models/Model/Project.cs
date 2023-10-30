@@ -15,6 +15,8 @@ namespace EFCore_Models.Model
 
         //[Column("Folder Path")]
         //[Required] To mention this to be required field
+        //[MaxLength(15)] To define the maximum length of an input
+        //[NotMapped()] Not required to be added in table
         public string RelativeFolderPath { get; set; }
 
     }
