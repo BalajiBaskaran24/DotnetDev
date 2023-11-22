@@ -13,6 +13,8 @@ namespace EFCore_DataAccess.Data
         public DbSet<Execution> ExecutionInfo { get; set; }
         public DbSet<TestCase> TestInfo { get; set; }
 
+        //public DbSet<UseCaseDict> useCaseDicts { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=(localdb)\\ProjectModels;Database=GRLAnalyticsDB;TrustServerCertificate=True;Trusted_Connection=True;");

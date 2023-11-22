@@ -37,9 +37,19 @@ namespace ExploreCSharp.SOLID.LiskovSubs
             Name = name;
         }
 
+
+        /// <summary>
+        /// This method is not required to be implemented in ContractEmployee, since this method is in different interface
+        /// </summary>
+        /// <returns></returns>
         public abstract decimal CalculateBonus();
         public abstract decimal GetMinimumSalary();
     }
+
+
+    /// <summary>
+    /// Derives from Employee since IEmployeeBonus is required
+    /// </summary>
     public class PermanentEmployee : Employee
     {
         public PermanentEmployee(int id, string name) : base(id, name)
@@ -56,6 +66,10 @@ namespace ExploreCSharp.SOLID.LiskovSubs
             return 1000;
         }
     }
+
+    /// <summary>
+    /// Derives from IEmployee since IEmployeeBonus is not required
+    /// </summary>
     public class ContractEmployee : IEmployee
     {
         public int ID { get; set; }

@@ -8,18 +8,33 @@ namespace ExploreCSharp.Keywords
 {
     /// <summary>
     /// Class that compares the null check using == operator and .Equals or is null method usage
-    /// Keyword: is, not
+    /// Keywords covered: is, not
+    /// Problem statement: Using == for null check can go wrong 
+    /// Because: This operator can be overridden, user defined logic can happen 
+    /// Conclusion: Use Equals ReferenceEquals() / is / is not 
     /// </summary>
     public class Equals_EqualToOperator
     {
-        //Comparison of .Equals and == operator
-
+        /// <summary>
+        /// Override Equals method. Takes object as input parameter
+        /// Not recommended for null check, since the calling object call be null
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object? obj)
         {
             Console.WriteLine("Invoked overloaded function");
             return this == obj ? true : false;
         }
 
+        /// <summary>
+        /// Operator overloading of equals function
+        /// Can pass any data model as input parameter, and the behavior will be 
+        /// applicable only for this data model
+        /// </summary>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <returns></returns>
         public static bool operator ==(Equals_EqualToOperator left, Equals_EqualToOperator right)
         {
             return false;
@@ -35,6 +50,7 @@ namespace ExploreCSharp.Keywords
         {
             Equals_EqualToOperator sample = null;
 
+            //---------------Will always provide right output---------------
             if (sample is null)//Returns true for null
             {
 
@@ -44,7 +60,9 @@ namespace ExploreCSharp.Keywords
             {
 
             }
+            //---------------------------------------------------------------
 
+            //---------------If overridden, behavior can be altered---------------
             if (sample == null)
             {
                 Console.WriteLine("== operator returns null correctly");
@@ -53,7 +71,10 @@ namespace ExploreCSharp.Keywords
             {
                 Console.WriteLine("== operator fails to return null");
             }
+            //--------------------------------------------------------------------
 
+
+            //---------------Will always provide right output---------------
             if (Equals(sample, null))
             {
                 Console.WriteLine(".Equals operator returns null correctly");
@@ -62,9 +83,19 @@ namespace ExploreCSharp.Keywords
             {
                 Console.WriteLine(".Equals operator fails to return null");
             }
+            //---------------------------------------------------------------
+
 
             sample = new Equals_EqualToOperator();
-            if (sample.Equals(null)) { }
+            //sample can be null, which leads to exception
+            if (sample.Equals(new Equals_EqualToOperator()))
+            {
+
+            }
+            else
+            {
+
+            }
 
         }
 
