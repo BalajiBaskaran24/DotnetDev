@@ -9,17 +9,32 @@ namespace ExploreCSharp.Keywords
     /// <summary>
     /// Class that compares the null check using == operator and .Equals or is null method usage
     /// Keyword: is, not
+    /// Problem statement: Using == for null check can go wrong 
+    /// Because: This operator can be overridden
+    /// Conclusion: Use Equals method 
     /// </summary>
     public class Equals_EqualToOperator
     {
-        //Comparison of .Equals and == operator
-
+        /// <summary>
+        /// Override Equals method. Takes object as input parameter
+        /// Not recommended for null check, since the calling object call be null
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object? obj)
         {
             Console.WriteLine("Invoked overloaded function");
             return this == obj ? true : false;
         }
 
+        /// <summary>
+        /// Operator overloading of equals function
+        /// Can pass any data model as input parameter, and the behavior will be 
+        /// applicable only for this data model
+        /// </summary>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <returns></returns>
         public static bool operator ==(Equals_EqualToOperator left, Equals_EqualToOperator right)
         {
             return false;
@@ -64,7 +79,14 @@ namespace ExploreCSharp.Keywords
             }
 
             sample = new Equals_EqualToOperator();
-            if (sample.Equals(null)) { }
+            if (sample.Equals(new Equals_EqualToOperator()))
+            {
+
+            }
+            else
+            {
+
+            }
 
         }
 

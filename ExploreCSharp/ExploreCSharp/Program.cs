@@ -13,6 +13,19 @@ namespace ExploreCSharp
     {
         public static void Main(string[] args)
         {
+            //Set this to desired class
+            StarterEnum starterEnum = StarterEnum.Eq_EqToOp;
+
+            switch (starterEnum)
+            {
+                case StarterEnum.Eq_EqToOp:
+                    Equals_EqualToOperator.StarterEquals();
+                    break;
+                default:
+                    break;
+            }
+
+
             //int 
             int x = 1, y = 2;
             int z = x / y;
@@ -33,8 +46,6 @@ namespace ExploreCSharp
 
             //DIPStarter.Execute();
 
-            //== and .Equals comparison
-            //Equals_EqualToOperator.StarterEquals();
         }
     }
 }
