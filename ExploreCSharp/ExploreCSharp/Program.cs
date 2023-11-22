@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using ExploreCSharp.SOLID;
 using ExploreCSharp.DependencyInjection.VSExample;
 using ExploreCSharp.Keywords;
+using ExploreCSharp.Benchmark;
 
 namespace ExploreCSharp
 {
@@ -14,12 +15,15 @@ namespace ExploreCSharp
         public static void Main(string[] args)
         {
             //Set this to desired class
-            StarterEnum starterEnum = StarterEnum.Eq_EqToOp;
+            StarterEnum starterEnum = StarterEnum.ListBenchmark;
 
             switch (starterEnum)
             {
                 case StarterEnum.Eq_EqToOp:
                     Equals_EqualToOperator.StarterEquals();
+                    break;
+                case StarterEnum.ListBenchmark:
+                    BMStarter.Start();
                     break;
                 default:
                     break;
