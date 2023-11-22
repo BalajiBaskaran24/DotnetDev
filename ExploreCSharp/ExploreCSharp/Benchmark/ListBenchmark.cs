@@ -17,6 +17,11 @@ namespace ExploreCSharp.Benchmark;
 public class ListBenchmark
 {
     private static readonly Random Rng = new(80085);
+
+    /// <summary>
+    /// Benchmark results will be provided for each of this param value
+    /// </summary>
+    [Params(100, 1000, 10000)]
     public int Size { get; set; } = 100;
 
     public List<int> _items;
