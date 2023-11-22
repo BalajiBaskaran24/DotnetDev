@@ -8,10 +8,10 @@ namespace ExploreCSharp.Keywords
 {
     /// <summary>
     /// Class that compares the null check using == operator and .Equals or is null method usage
-    /// Keyword: is, not
+    /// Keywords covered: is, not
     /// Problem statement: Using == for null check can go wrong 
-    /// Because: This operator can be overridden
-    /// Conclusion: Use Equals method 
+    /// Because: This operator can be overridden, user defined logic can happen 
+    /// Conclusion: Use Equals ReferenceEquals() / is / is not 
     /// </summary>
     public class Equals_EqualToOperator
     {
@@ -50,6 +50,7 @@ namespace ExploreCSharp.Keywords
         {
             Equals_EqualToOperator sample = null;
 
+            //---------------Will always provide right output---------------
             if (sample is null)//Returns true for null
             {
 
@@ -59,7 +60,9 @@ namespace ExploreCSharp.Keywords
             {
 
             }
+            //---------------------------------------------------------------
 
+            //---------------If overridden, behavior can be altered---------------
             if (sample == null)
             {
                 Console.WriteLine("== operator returns null correctly");
@@ -68,7 +71,10 @@ namespace ExploreCSharp.Keywords
             {
                 Console.WriteLine("== operator fails to return null");
             }
+            //--------------------------------------------------------------------
 
+
+            //---------------Will always provide right output---------------
             if (Equals(sample, null))
             {
                 Console.WriteLine(".Equals operator returns null correctly");
@@ -77,8 +83,11 @@ namespace ExploreCSharp.Keywords
             {
                 Console.WriteLine(".Equals operator fails to return null");
             }
+            //---------------------------------------------------------------
+
 
             sample = new Equals_EqualToOperator();
+            //sample can be null, which leads to exception
             if (sample.Equals(new Equals_EqualToOperator()))
             {
 
