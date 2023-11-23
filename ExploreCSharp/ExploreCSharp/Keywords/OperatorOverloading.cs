@@ -8,6 +8,7 @@ namespace ExploreCSharp.Keywords;
 
 /// <summary>
 /// Class that explains operator overloading
+/// Keyword used: operator
 /// </summary>
 public class OpOverloadingClass
 {
