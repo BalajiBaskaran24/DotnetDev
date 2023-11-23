@@ -15,14 +15,14 @@ namespace ExploreCSharp
         public static void Main(string[] args)
         {
             //Set this to desired class
-            StarterEnum starterEnum = StarterEnum.ListBenchmark;
+            StarterEnum starterEnum = StarterEnum.Benchmark;
 
             switch (starterEnum)
             {
                 case StarterEnum.Eq_EqToOp:
                     Equals_EqualToOperator.StarterEquals();
                     break;
-                case StarterEnum.ListBenchmark:
+                case StarterEnum.Benchmark:
                     BMStarter.Start();
                     break;
                 default:

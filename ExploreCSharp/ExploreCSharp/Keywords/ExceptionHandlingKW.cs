@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ExploreCSharp.Keywords
 {
     /// <summary>
-    /// Sample class with all keywords used for exception
+    /// Keywords used: try, catch, throw, finally
     /// </summary>
     public class ExceptionHandlingKW
     {
