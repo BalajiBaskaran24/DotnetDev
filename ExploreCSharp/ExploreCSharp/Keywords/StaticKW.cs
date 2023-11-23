@@ -19,13 +19,16 @@ namespace ExploreCSharp.Keywords
         static int St1 = St2;//This will not throw error
         static int St2 = 10;
 
+        static int St3 = St4;
+        static int St4;
+
         //St1 holds 0
         //St2 holds 10
         //St1 = 15;
         //Now St1 will have 15
-
+        int Ref2 = 0;
         //int Ref1 = Ref2;//This line throw error
-        //int Ref2;
+        //int Ref2 = 0;
         //-----------------------------------------------------------------
 
         //------------------------------using static for namespaces-----------------------------------
