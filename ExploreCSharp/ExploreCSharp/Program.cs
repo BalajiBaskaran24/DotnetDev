@@ -15,7 +15,7 @@ namespace ExploreCSharp
         public static void Main(string[] args)
         {
             //Set this to desired class
-            StarterEnum starterEnum = StarterEnum.Benchmark;
+            StarterEnum starterEnum = StarterEnum.Static;
 
             switch (starterEnum)
             {
@@ -24,6 +24,9 @@ namespace ExploreCSharp
                     break;
                 case StarterEnum.Benchmark:
                     BMStarter.Start();
+                    break;
+                case StarterEnum.Static:
+                    StaticStarter.Start();
                     break;
                 default:
                     break;
