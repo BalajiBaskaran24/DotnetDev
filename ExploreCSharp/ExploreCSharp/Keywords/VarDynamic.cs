@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,7 +17,7 @@ namespace ExploreCSharp.Keywords
         //Explanation: We know that the type of var variable will be assinged by evaluating right hand side experession.
         //Class scope variables can be used without initialization, whereas local variables cannot be. So we cannot assure that
         //compiler will always get a chance to evaluate the type of var for class scope varaibles.
-        
+
         static int varClassLevel;
         public static void Usage()
         {
@@ -31,7 +32,9 @@ namespace ExploreCSharp.Keywords
             }
 
             //var sampleVar; Will throw error. Must be initialized.
+
         }
+        
     }
 
 

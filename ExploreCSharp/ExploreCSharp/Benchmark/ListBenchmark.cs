@@ -79,6 +79,7 @@ public class BMStarter
     public static void Start()
     {
         //BenchmarkRunner.Run<ListBenchmark>();
-        BenchmarkRunner.Run<ListAccess>();
+        //BenchmarkRunner.Run<ListAccess>();
+        BenchmarkRunner.Run<StructvsClass>();
     }
 }

@@ -19,13 +19,16 @@ namespace ExploreCSharp.Keywords
         static int St1 = St2;//This will not throw error
         static int St2 = 10;
 
+        static int St3 = St4;
+        static int St4;
+
         //St1 holds 0
         //St2 holds 10
         //St1 = 15;
         //Now St1 will have 15
-
+        int Ref2 = 0;
         //int Ref1 = Ref2;//This line throw error
-        //int Ref2;
+        //int Ref2 = 0;
         //-----------------------------------------------------------------
 
         //------------------------------using static for namespaces-----------------------------------
@@ -61,5 +64,53 @@ namespace ExploreCSharp.Keywords
 
     }
 
+    /// <summary>
+    /// If the static keyword is applied to a class, all the members of the class must be static.
+    /// </summary>
+    public static class SampleStaticClass
+    {
+        //public int a = 10;//CS0708:: This error occurs if you declare a non-static member in a class that is declared static
+
+        //public void SampleMethod() //CS0708
+        //{
+
+        //}
+    }
+
+    class StaticInitialization
+    {
+        /// <summary>
+        /// you can initialize a static field by using another static field 
+        /// that is not yet declared.The results will be undefined until you explicitly 
+        /// assign a value to the static field.
+        /// </summary>
+        static int x = y;
+
+        static int y = 5;
+
+        public static void StaticVarInit()
+        {
+            Console.WriteLine(StaticInitialization.x);
+            Console.WriteLine(StaticInitialization.y);
+
+            StaticInitialization.x = 99;
+            Console.WriteLine(StaticInitialization.x);
+        }
+    }
+    /*
+    Output:
+        0
+        5
+        99
+    */
+
+
+    public class StaticStarter
+    {
+        public static void Start()
+        {
+            StaticInitialization.StaticVarInit();
+        }
+    }
 
 }

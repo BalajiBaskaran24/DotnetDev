@@ -15,7 +15,7 @@ namespace ExploreCSharp
         public static void Main(string[] args)
         {
             //Set this to desired class
-            StarterEnum starterEnum = StarterEnum.Benchmark;
+            StarterEnum starterEnum = StarterEnum.Static;
 
             switch (starterEnum)
             {
@@ -25,6 +25,9 @@ namespace ExploreCSharp
                 case StarterEnum.Benchmark:
                     BMStarter.Start();
                     break;
+                case StarterEnum.Static:
+                    StaticStarter.Start();
+                    break;
                 default:
                     break;
             }
@@ -33,7 +36,6 @@ namespace ExploreCSharp
             //int 
             int x = 1, y = 2;
             int z = x / y;
-
             //Var and dynamic keyword usage
             VarDynamic.Usage();
 

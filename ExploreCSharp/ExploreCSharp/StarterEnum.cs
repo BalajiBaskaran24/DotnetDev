@@ -2,6 +2,7 @@
 {
     Eq_EqToOp,
     Benchmark,
+    Static,
     None
 }
 
