@@ -4,6 +4,8 @@
     Benchmark,
     Static,
     ValueRefTypes,
+    DelLambda,
+    VarDynamic,
     None
 }
 

@@ -15,7 +15,7 @@ namespace ExploreCSharp
         public static void Main(string[] args)
         {
             //Set this to desired class
-            StarterEnum starterEnum = StarterEnum.ValueRefTypes;
+            StarterEnum starterEnum = StarterEnum.DelLambda;
 
             switch (starterEnum)
             {
@@ -30,6 +30,14 @@ namespace ExploreCSharp
                     break;
                 case StarterEnum.ValueRefTypes:
                     ValuevsRefTypes.ValueRefStarter();
+                    break;
+                case StarterEnum.DelLambda:
+                    DelegatesandLambda.UsageDel();
+                    DelegatesandLambda.UsageFunc();
+                    DelegatesandLambda.DefaultDelUsage();
+                    break;
+                case StarterEnum.VarDynamic:
+                    VarDynamic.Usage();
                     break;
                 default:
                     break;
