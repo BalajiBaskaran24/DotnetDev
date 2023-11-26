@@ -3,6 +3,7 @@
     Eq_EqToOp,
     Benchmark,
     Static,
+    ValueRefTypes,
     None
 }
 

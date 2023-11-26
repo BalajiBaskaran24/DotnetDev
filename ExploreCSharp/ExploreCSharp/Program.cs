@@ -15,7 +15,7 @@ namespace ExploreCSharp
         public static void Main(string[] args)
         {
             //Set this to desired class
-            StarterEnum starterEnum = StarterEnum.Static;
+            StarterEnum starterEnum = StarterEnum.ValueRefTypes;
 
             switch (starterEnum)
             {
@@ -28,10 +28,13 @@ namespace ExploreCSharp
                 case StarterEnum.Static:
                     StaticStarter.Start();
                     break;
+                case StarterEnum.ValueRefTypes:
+                    ValuevsRefTypes.ValueRefStarter();
+                    break;
                 default:
                     break;
             }
-
+            return;
 
             //int 
             int x = 1, y = 2;
