@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace ExploreCSharp.ReferenceTypes
 {
+    //Default access is public
+
     interface ISample2Interface
     {
         int SameMthdName();
@@ -48,21 +50,28 @@ namespace ExploreCSharp.ReferenceTypes
         /// </summary>
         public int SampleProp { get; set; }
 
-        public int SameName { get; set; }
-
-        public int MyProperty
+        /// <summary>
+        /// Should be implemented as part of ISampleInterface
+        /// </summary>
+        void ISampleInterface.SampleMethod()
         {
-            get
-            {
-                return 0;
-            }
-            set
-            {
-                
-            }
+            // Method implementation
         }
 
-        public int SameVarName
+        #region Explicit implementation
+
+        //If class implements interface with same method/property name
+        //use interface name to write definition 
+
+        //CS0106
+        //An explicit interface implementation doesn't have an access modifier
+        //since it isn't accessible as a member of the type it's defined in. Instead,
+        //it's only accessible when called through an instance of the interface. If you
+        //specify an access modifier for an explicit interface implementation, you get compiler error
+
+        int ISample2Interface.SameVarName { get; set; }
+
+        int ISampleInterface.SameVarName
         {
             get
             {
@@ -84,20 +93,23 @@ namespace ExploreCSharp.ReferenceTypes
             return 0;
         }
 
-        /// <summary>
-        /// Should be implemented as part of ISampleInterface
-        /// </summary>
-        void ISampleInterface.SampleMethod()
-        {
-            // Method implementation
-        }
+        #endregion
+
+
+
     }
 
     public class InterfaceStarter
     {
         public void Starter()
         {
+            ISample2Interface sample2Interface = new ImplementationClass();
+            sample2Interface.SameVarName = 1;
 
+            ImplementationClass implementationClass = new ImplementationClass();
+            //Below lines will throw error. CS0106
+            //implementationClass.SameMthdName
+            //implementationClass.SameVarName
         }
     }
 
