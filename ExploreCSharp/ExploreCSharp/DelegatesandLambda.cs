@@ -1,4 +1,6 @@
 ﻿using ExploreCSharp.SOLID.LiskovSubs;
+using Moq;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +25,12 @@ namespace ExploreCSharp
         }
 
         //--------------Declaring and using a delegate--------------
+
+        //When any of the methods throws an exception that is not caught within the method, 
+        //that exception is passed to the caller of the delegate and no subsequent methods in the 
+        //invocation list are called. If the delegate has a return value and/or out parameters, 
+        //it returns the return value and parameters of the last method invoked.
+
 
         /// <summary>
         /// Delegate, takes string as parameter and returns string
@@ -57,6 +65,7 @@ namespace ExploreCSharp
         {
             try
             {
+                //Multicase delegate
                 Reverse rev1 = ReverseStringDel;//Binding method and delegate
                 Reverse rev2 = ReverseToOriginal;
                 Reverse Consolidated = rev1 + rev2 + rev1;
@@ -73,6 +82,8 @@ namespace ExploreCSharp
                 //output::
                 //Called ReverseStringDel withAfter rev2 removal
                 //Called ReverseStringDel withAfter rev2 removal
+
+
             }
             catch (Exception ex)
             {
