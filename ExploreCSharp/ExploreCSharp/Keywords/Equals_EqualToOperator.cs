@@ -8,7 +8,8 @@ namespace ExploreCSharp.Keywords
 {
     /// <summary>
     /// Class that compares the null check using == operator and .Equals or is null method usage
-    /// Keywords covered: is, not
+    /// KEYWORDS COVERED: is, not, and, or
+    /// is: Check whether runtime type of expression result is compatible with given type
     /// Problem statement: Using == for null check can go wrong 
     /// Because: This operator can be overridden, user defined logic can happen 
     /// Conclusion: Use Equals ReferenceEquals() / is / is not 
@@ -48,6 +49,9 @@ namespace ExploreCSharp.Keywords
 
         public static void StarterEquals()
         {
+            //KEYWORDS COVERED: is, and, or
+            static bool IsLetter(char c) => c is (>= 'a' and <= 'z') or (>= 'A' and <= 'Z');
+
             Equals_EqualToOperator sample = null;
 
             //---------------Will always provide right output---------------
@@ -96,6 +100,8 @@ namespace ExploreCSharp.Keywords
             {
 
             }
+
+
 
         }
 
