@@ -62,6 +62,12 @@ namespace ExploreCSharp.Keywords
         //    }
         //}
 
+
+        //public void StaticLocalMember()
+        //{
+        //    static int StaticLocalVariable = 1;//This will throw error
+        //}
+
     }
 
     /// <summary>
