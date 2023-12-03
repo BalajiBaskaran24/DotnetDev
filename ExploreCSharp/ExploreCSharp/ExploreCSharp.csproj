@@ -18,7 +18,6 @@
   <ItemGroup>
     <Folder Include="Asynchronous\" />
     <Folder Include="DesignPatterns\Creational\Abstract\" />
-    <Folder Include="DesignPatterns\Creational\Factory\" />
     <Folder Include="DesignPatterns\Creational\Singleton\" />
     <Folder Include="DesignPatterns\Creational\Prototype\" />
     <Folder Include="DesignPatterns\Behavioral\" />

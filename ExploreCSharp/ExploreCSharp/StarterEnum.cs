@@ -6,6 +6,8 @@
     ValueRefTypes,
     DelLambda,
     VarDynamic,
+    DP_Abstract,
+    DP_Factory,
     None
 }
 

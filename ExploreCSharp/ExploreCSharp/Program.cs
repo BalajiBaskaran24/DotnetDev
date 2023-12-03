@@ -7,6 +7,7 @@ using ExploreCSharp.SOLID;
 using ExploreCSharp.DependencyInjection.VSExample;
 using ExploreCSharp.Keywords;
 using ExploreCSharp.Benchmark;
+using ExploreCSharp.DesignPatterns.Creational.Factory;
 
 namespace ExploreCSharp
 {
@@ -15,7 +16,7 @@ namespace ExploreCSharp
         public static void Main(string[] args)
         {
             //Set this to desired class
-            StarterEnum starterEnum = StarterEnum.DelLambda;
+            StarterEnum starterEnum = StarterEnum.DP_Factory;
 
             switch (starterEnum)
             {
@@ -38,6 +39,9 @@ namespace ExploreCSharp
                     break;
                 case StarterEnum.VarDynamic:
                     VarDynamic.Usage();
+                    break;
+                case StarterEnum.DP_Factory:
+                    FactoryProperty.Starter();
                     break;
                 default:
                     break;
