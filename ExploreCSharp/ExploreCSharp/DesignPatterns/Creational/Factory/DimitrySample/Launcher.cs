@@ -9,8 +9,16 @@ using System.Threading.Tasks;
 
 namespace ExploreCSharp.DesignPatterns.Creational.Factory.DimitrySample;
 
-/// <summary>
-/// Access, create and use various factories and modules
+///<summary>
+///Access, create and use various factories and modules
+///::: FACTORY ::: 
+///1. Factory method is a static method that creates objects
+///
+///2. Factory can take care of object creation
+///
+///3. Factory can be external or reside inside the object as an inner class
+///
+///4. Hierarchies of factories can be used to create related objects
 /// </summary>
 public class Launcher
 {

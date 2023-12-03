@@ -9,6 +9,7 @@
     DP_Abstract,
     DP_Factory,
     DP_Factory_Dimitry,
+    DP_Proto_IClonable,
     None
 }
 
