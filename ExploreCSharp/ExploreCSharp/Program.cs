@@ -7,6 +7,9 @@ using ExploreCSharp.SOLID;
 using ExploreCSharp.DependencyInjection.VSExample;
 using ExploreCSharp.Keywords;
 using ExploreCSharp.Benchmark;
+using ExploreCSharp.DesignPatterns.Creational.Factory;
+using ExploreCSharp.DesignPatterns.Creational.Factory.DimitrySample;
+using ExploreCSharp.DesignPatterns.Creational.Prototype;
 
 namespace ExploreCSharp
 {
@@ -15,7 +18,7 @@ namespace ExploreCSharp
         public static void Main(string[] args)
         {
             //Set this to desired class
-            StarterEnum starterEnum = StarterEnum.DelLambda;
+            StarterEnum starterEnum = StarterEnum.DP_Proto_IClonable;
 
             switch (starterEnum)
             {
@@ -38,6 +41,16 @@ namespace ExploreCSharp
                     break;
                 case StarterEnum.VarDynamic:
                     VarDynamic.Usage();
+                    break;
+                case StarterEnum.DP_Factory:
+                    FactoryProperty.Starter();
+                    break;
+                case StarterEnum.DP_Factory_Dimitry:
+                    Launcher LaunchOb = new();
+                    LaunchOb.LaunchApp();
+                    break;
+                case StarterEnum.DP_Proto_IClonable:
+                    UsingIClonable.Starter();
                     break;
                 default:
                     break;
