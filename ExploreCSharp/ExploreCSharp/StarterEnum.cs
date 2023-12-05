@@ -10,6 +10,7 @@
     DP_Factory,
     DP_Factory_Dimitry,
     DP_Proto_IClonable,
+    DP_Singleton,
     None
 }
 

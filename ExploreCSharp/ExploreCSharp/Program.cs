@@ -10,6 +10,7 @@ using ExploreCSharp.Benchmark;
 using ExploreCSharp.DesignPatterns.Creational.Factory;
 using ExploreCSharp.DesignPatterns.Creational.Factory.DimitrySample;
 using ExploreCSharp.DesignPatterns.Creational.Prototype;
+using ExploreCSharp.DesignPatterns.Creational.Singleton;
 
 namespace ExploreCSharp
 {
@@ -51,6 +52,9 @@ namespace ExploreCSharp
                     break;
                 case StarterEnum.DP_Proto_IClonable:
                     UsingIClonable.Starter();
+                    break;
+                case StarterEnum.DP_Singleton:
+                    SingletonStarter.Starter();
                     break;
                 default:
                     break;
