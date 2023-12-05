@@ -8,12 +8,12 @@ namespace ExploreCSharp.Variance
 {
     public class VarienceInInterface
     {
-        //IEnumerable<T>(T is covariant)
-        //IEnumerator<T>(T is covariant)
-        //IQueryable<T>(T is covariant)
-        //IGrouping<TKey, TElement>(TKey and TElement are covariant)
-        //IComparer<T>(T is contravariant)
-        //IEqualityComparer<T>(T is contravariant)
-        //IComparable<T>(T is contravariant)
+        //IEnumerable<out T>(T is covariant)
+        //IEnumerator<out T>(T is covariant)
+        //IQueryable<out T>(T is covariant)
+        //IGrouping<out TKey, out TElement>(TKey and TElement are covariant)
+        //IComparer<T>(in T is contravariant)
+        //IEqualityComparer<in T>(T is contravariant)
+        //IComparable<in T>(T is contravariant)
     }
 }

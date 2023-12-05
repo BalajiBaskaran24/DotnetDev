@@ -13,6 +13,25 @@ public interface IDatabase
     int GetPopulation(string name);
 }
 
+/// <summary>
+/// DB used in testing
+/// </summary>
+public class DummyDatabase : IDatabase
+{
+    public int GetPopulation(string name)
+    {
+        return new Dictionary<string, int>
+        {
+            ["alpha"] = 1,
+            ["beta"] = 2,
+            ["gamma"] = 3
+        }[name];
+    }
+}
+
+/// <summary>
+/// Provides access to "capitals.txt" file
+/// </summary>
 public class SingletonDatabase : IDatabase
 {
     private Dictionary<string, int> capitals;
@@ -37,9 +56,8 @@ public class SingletonDatabase : IDatabase
         return capitals[name];
     }
 
-    // laziness + thread safety
     /// <summary>
-    /// Instance for SingletonDatabase is created only when we access instance.Value
+    /// Lazy initilization: Instance for SingletonDatabase is created only when we access instance.Value
     /// </summary>
     private static Lazy<SingletonDatabase> instance = new Lazy<SingletonDatabase>(() =>
     {
@@ -49,6 +67,29 @@ public class SingletonDatabase : IDatabase
 
     public static IDatabase Instance => instance.Value;
 }
+
+public class OrdinaryDatabase : IDatabase
+{
+    private Dictionary<string, int> capitals;
+
+    public OrdinaryDatabase()
+    {
+        WriteLine("Initializing database");
+
+        capitals = File.ReadAllLines(
+          Path.Combine(
+            new FileInfo(typeof(IDatabase).Assembly.Location).DirectoryName, "capitals.txt")
+          ).Batch(2)
+          .ToDictionary(
+            list => list.ElementAt(0).Trim(),
+            list => int.Parse(list.ElementAt(1)));
+    }
+    public int GetPopulation(string name)
+    {
+        return capitals[name];
+    }
+}
+
 
 public class SingletonStarter
 {
@@ -64,6 +105,10 @@ public class SingletonStarter
     }
 }
 
+
+/// <summary>
+/// Access Layer: Used singleton instance directly
+/// </summary>
 public class SingletonRecordFinder
 {
     public int TotalPopulation(IEnumerable<string> names)
@@ -77,7 +122,7 @@ public class SingletonRecordFinder
 
 
 /// <summary>
-/// Using DI
+/// Access Layer: Inject DB using DI
 /// </summary>
 public class ConfigurableRecordFinder
 {
@@ -97,15 +142,3 @@ public class ConfigurableRecordFinder
     }
 }
 
-public class DummyDatabase : IDatabase
-{
-    public int GetPopulation(string name)
-    {
-        return new Dictionary<string, int>
-        {
-            ["alpha"] = 1,
-            ["beta"] = 2,
-            ["gamma"] = 3
-        }[name];
-    }
-}
