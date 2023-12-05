@@ -11,6 +11,7 @@
     DP_Factory_Dimitry,
     DP_Proto_IClonable,
     DP_Singleton,
+    DP_Singleton_AmbientContext,
     None
 }
 

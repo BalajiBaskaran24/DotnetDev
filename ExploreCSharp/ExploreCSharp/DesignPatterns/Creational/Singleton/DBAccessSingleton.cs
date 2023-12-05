@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BenchmarkDotNet.Attributes.MarkdownExporterAttribute;
 using static System.Console;
 
 namespace ExploreCSharp.DesignPatterns.Creational.Singleton;
@@ -11,6 +12,7 @@ namespace ExploreCSharp.DesignPatterns.Creational.Singleton;
 public interface IDatabase
 {
     int GetPopulation(string name);
+    public static string FilePath => "E:\\Github\\DotnetDev\\ExploreCSharp\\ExploreCSharp\\DesignPatterns\\Creational\\Singleton\\capitals.txt";
 }
 
 /// <summary>
@@ -41,11 +43,8 @@ public class SingletonDatabase : IDatabase
     private SingletonDatabase()
     {
         WriteLine("Initializing database");
-
-        capitals = File.ReadAllLines(
-          Path.Combine(
-            new FileInfo(typeof(IDatabase).Assembly.Location).DirectoryName, "capitals.txt")
-          ).Batch(2)
+        capitals = File.ReadAllLines(IDatabase.FilePath)
+          .Batch(2)
           .ToDictionary(
             list => list.ElementAt(0).Trim(),
             list => int.Parse(list.ElementAt(1)));
@@ -76,10 +75,7 @@ public class OrdinaryDatabase : IDatabase
     {
         WriteLine("Initializing database");
 
-        capitals = File.ReadAllLines(
-          Path.Combine(
-            new FileInfo(typeof(IDatabase).Assembly.Location).DirectoryName, "capitals.txt")
-          ).Batch(2)
+        capitals = File.ReadAllLines(IDatabase.FilePath).Batch(2)
           .ToDictionary(
             list => list.ElementAt(0).Trim(),
             list => int.Parse(list.ElementAt(1)));
@@ -89,22 +85,6 @@ public class OrdinaryDatabase : IDatabase
         return capitals[name];
     }
 }
-
-
-public class SingletonStarter
-{
-    public static void Starter()
-    {
-        var db = SingletonDatabase.Instance;
-
-        // works just fine while you're working with a real database.
-        var city = "Tokyo";
-        WriteLine($"{city} has population {db.GetPopulation(city)}");
-
-        // now some tests
-    }
-}
-
 
 /// <summary>
 /// Access Layer: Used singleton instance directly
@@ -139,6 +119,23 @@ public class ConfigurableRecordFinder
         foreach (var name in names)
             result += database.GetPopulation(name);
         return result;
+    }
+}
+
+public class SingletonStarter
+{
+    /// <summary>
+    /// Execution starts here!!!
+    /// </summary>
+    public static void Starter()
+    {
+        var db = SingletonDatabase.Instance;
+
+        // works just fine while you're working with a real database.
+        var city = "Tokyo";
+        WriteLine($"{city} has population {db.GetPopulation(city)}");
+
+        //Refer DIPopulationTest for DI reference using autofac
     }
 }
 

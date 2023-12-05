@@ -56,6 +56,9 @@ namespace ExploreCSharp
                 case StarterEnum.DP_Singleton:
                     SingletonStarter.Starter();
                     break;
+                case StarterEnum.DP_Singleton_AmbientContext:
+                    AmbientContextStarter.Starter();
+                    break;
                 default:
                     break;
             }
