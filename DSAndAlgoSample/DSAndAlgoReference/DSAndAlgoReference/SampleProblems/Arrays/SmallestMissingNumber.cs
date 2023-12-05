@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace DSAndAlgoReference.SampleProblems.Arrays
 {
     /// <summary>
+    /// Company name: KLA
     /// Level: Medium
     /// TODO:: Find smallest missing number that cannot be 
     /// achieved by doing bitwise OR of all elements in any of its subset

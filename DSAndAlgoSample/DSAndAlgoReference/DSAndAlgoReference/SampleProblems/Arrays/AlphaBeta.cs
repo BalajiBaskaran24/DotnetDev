@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace DSAndAlgoReference.SampleProblems.Arrays;
 
 /// <summary>
+/// Company name: KLA
 /// Level: Easy
 /// If number k appears exactly k times - Alpha
 /// If number k appears exactly k times and starts from kth index
