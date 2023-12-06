@@ -37,7 +37,7 @@ public class AlphaBeta
                 Counter = 1;
             }
         }
-        if (Counter == input.Last())
+        if (Counter == input.Last())//To handle last element of list
         {
             Alpha += 1;
             if ((input.Count - Counter) == input.Last())
