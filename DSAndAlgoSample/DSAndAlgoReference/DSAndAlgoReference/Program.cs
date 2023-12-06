@@ -59,6 +59,7 @@ public class Program
             case Option.Array_Decibinary:
                 DeciBinary.MinPartitions("32");
                 DeciBinary.MinPartitions("82734");
+                DeciBinary.RemoveElement(new[] { 3, 2, 2, 3 }, 3);
                 break;
             default:
                 break;

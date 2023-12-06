@@ -29,5 +29,17 @@ namespace DSAndAlgoReference.SampleProblems.Arrays
             int diff = x - '0';
             return 0;
         }
+
+        public static int RemoveElement(int[] nums, int val)
+        {
+            List<int> temp = nums.ToList().FindAll(x => (x != val));
+            nums = temp.ToArray();
+            for (int i = 0; i < nums.Length; i++)
+            {
+                Console.WriteLine($"{nums[i]}");
+            }
+            return nums.Length;
+        }
+
     }
 }
