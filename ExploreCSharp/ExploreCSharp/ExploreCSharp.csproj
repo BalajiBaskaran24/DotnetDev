@@ -20,7 +20,6 @@
     <Folder Include="Asynchronous\" />
     <Folder Include="DesignPatterns\Creational\Abstract\" />
     <Folder Include="DesignPatterns\Behavioral\" />
-    <Folder Include="DesignPatterns\Structural\" />
     <Folder Include="Generics\" />
   </ItemGroup>
 
