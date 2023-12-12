@@ -22,14 +22,26 @@
   <button>Add Item</button>
 </form>
 <body>
-  <h2>Checklist items</h2>
-  <ul>
-    <li class="checklistitem">
-      <input type="checkbox" />
-      <span>Wake up at 6.30</span>
-      <span>High</span>
-      <button class="deletechecklist">Delete</button>
-    </li>
-  </ul>
+  <content class="main">
+    <left>
+      <ul>
+        <li><button>All</button></li>
+        <li><button>High</button></li>
+        <li><button>Medium</button></li>
+        <li><button>Low</button></li>
+      </ul>
+    </left>
+    <primary>
+      <h2>Checklist items</h2>
+      <ul>
+        <li class="checklistitem">
+          <input type="checkbox" />
+          <span>Wake up at 6.30</span>
+          <span>High</span>
+          <button class="deletechecklist">Delete</button>
+        </li>
+      </ul>
+    </primary>
+  </content>
   <div class="summary">Task Status:</div>
 </body>
