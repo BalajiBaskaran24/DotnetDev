@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summary {
+  text-align: right;
+}
+
+.logo {
+  display: flex;
+  gap: 20px; /*Creates gap between items in this flex container*/
+}
+
+h1 {
+  background-color: rgb(255, 113, 66);
+  color: antiquewhite;
+}
+
+.checklistitem {
+  display: flex;
+  gap: 10px;
+}
+
+.deletechecklist {
+  margin-left: auto;
+}
