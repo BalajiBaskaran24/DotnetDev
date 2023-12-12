@@ -26,3 +26,9 @@ h1 {
 .deletechecklist {
   margin-left: auto;
 }
+
+.main {
+  display: grid;
+  grid-template-columns: 0.5Fr 1.5Fr;
+  gap: 50px;
+}
