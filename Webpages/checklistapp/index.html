@@ -1,47 +1,50 @@
 <!DOCTYPE html>
-<head>
-  <link href="style.css" rel="stylesheet" />
-  <title>Checklist</title>
-  <header class="header">
-    <div class="logo">
-      <img src="icon.jpg" height="100px" width="100px" />
-      <h1 class="header">Day<span>1</span></h1>
-    </div>
-    <button>Edit Checklist</button>
-  </header>
-</head>
-<form>
-  <input type="text" placeholder="Item Desc" />
-  <span>Characters left: 200</span>
-  <select>
-    <option value="">Set Priority:</option>
-    <option value="High">High</option>
-    <option value="Medium">Medium</option>
-    <option value="Low">Low</option>
-  </select>
-  <button>Add Item</button>
-</form>
-<body>
-  <content class="main">
-    <left>
-      <ul>
-        <li><button>All</button></li>
-        <li><button>High</button></li>
-        <li><button>Medium</button></li>
-        <li><button>Low</button></li>
-      </ul>
-    </left>
-    <primary>
-      <h2>Checklist items</h2>
-      <ul>
-        <li class="checklistitem">
-          <input type="checkbox" />
-          <span>Wake up at 6.30</span>
-          <span>High</span>
-          <button class="deletechecklist">Delete</button>
-        </li>
-      </ul>
-    </primary>
-  </content>
-  <div class="summary">Task Status:</div>
-</body>
+<div class="container">
+  <head>
+    <link href="style.css" rel="stylesheet" />
+    <title>Checklist</title>
+    <header class="header">
+      <div class="logo">
+        <img src="icon.jpg" />
+        <h1 class="header">Day<span>1</span></h1>
+      </div>
+      <button>Edit Checklist</button>
+    </header>
+  </head>
+  <form>
+    <input type="text" placeholder="Item Desc" />
+    <span>Characters left: 200</span>
+    <select>
+      <option value="">Set Priority:</option>
+      <option value="High">High</option>
+      <option value="Medium">Medium</option>
+      <option value="Low">Low</option>
+    </select>
+    <button>Add Item</button>
+  </form>
+  <body>
+    <content class="main">
+      <left>
+        <ul>
+          Filter
+          <li><button>All</button></li>
+          <li><button>High</button></li>
+          <li><button>Medium</button></li>
+          <li><button>Low</button></li>
+        </ul>
+      </left>
+      <primary>
+        <h2>Checklist items</h2>
+        <ul>
+          <li class="checklistitem">
+            <input type="checkbox" />
+            <span class="ckdesc">Wake up at 6.30</span>
+            <span>High</span>
+            <button class="deletechecklist">Delete</button>
+          </li>
+        </ul>
+      </primary>
+    </content>
+    <div class="summary">Task Status:</div>
+  </body>
+</div>
