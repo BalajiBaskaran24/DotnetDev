@@ -3,6 +3,7 @@ using DSAndAlgoReference;
 using DSAndAlgoReference.Hashing.CollisionHandling;
 using DSAndAlgoReference.SampleProblems;
 using DSAndAlgoReference.SampleProblems.Arrays;
+using DSAndAlgoReference.SampleProblems.Arrays.OneDArray;
 using DSAndAlgoReference.SampleProblems.DynamicProgramming;
 using DSAndAlgoReference.SampleProblems.Recursion;
 using DSAndAlgoReference.SampleProblems.Recursion.Striver;
@@ -59,7 +60,6 @@ public class Program
             case Option.Array_Decibinary:
                 DeciBinary.MinPartitions("32");
                 DeciBinary.MinPartitions("82734");
-                DeciBinary.RemoveElement(new[] { 3, 2, 2, 3 }, 3);
                 break;
             default:
                 break;
