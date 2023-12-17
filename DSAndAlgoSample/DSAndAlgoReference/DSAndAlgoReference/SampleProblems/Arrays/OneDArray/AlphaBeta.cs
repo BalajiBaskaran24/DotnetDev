@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSAndAlgoReference.SampleProblems.Arrays;
+namespace DSAndAlgoReference.SampleProblems.Arrays.OneDArray;
 
 /// <summary>
 /// Company name: KLA
@@ -14,9 +14,15 @@ namespace DSAndAlgoReference.SampleProblems.Arrays;
 /// </summary>
 public class AlphaBeta
 {
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="input"></param>
+    /// <returns>Alpha, beta</returns>
     public Tuple<int, int> Solution(List<int> input)
     {
-        //Start with Counter value 1. Because counter increases by one for each comparison
+        //Start with Counter value 1. Because counter increases only by one for each comparison
         int Counter = 1, Alpha = 0, Beta = 0;
         for (int i = 0; i < input.Count - 1; i++)//Iterate till n-1 since comparison is involved
         {
@@ -29,7 +35,7 @@ public class AlphaBeta
                 if (Counter == input[i])//Update alpha and beta values
                 {
                     Alpha += 1;
-                    if ((i - (Counter - 1)) == input[i])//Start index should be equal to value
+                    if (i - (Counter - 1) == input[i])//Start index should be equal to value
                     {
                         Beta += 1;
                     }
@@ -40,7 +46,7 @@ public class AlphaBeta
         if (Counter == input.Last())//To handle last element of list
         {
             Alpha += 1;
-            if ((input.Count - Counter) == input.Last())
+            if (input.Count - Counter == input.Last())
             {
                 Beta += 1;
             }

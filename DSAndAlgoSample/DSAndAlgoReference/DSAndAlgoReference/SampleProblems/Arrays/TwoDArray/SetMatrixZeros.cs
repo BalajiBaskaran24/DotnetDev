@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSAndAlgoReference.SampleProblems.Arrays;
+namespace DSAndAlgoReference.SampleProblems.Arrays.TwoDArray;
 
 /// <summary>
 /// If any cell in a 2D array contains 0 then all elements of
@@ -61,6 +61,8 @@ public class SetMatrixZeros
 
     /// <summary>
     /// Mark all elements in current column to -1
+    /// -1 is intermittent. To differentiate the elements that are 0 as a part of 
+    /// input and elements that should be set to 0 after complete iteration
     /// </summary>
     /// <param name="input"></param>
     /// <param name="colIndex"></param>
@@ -85,6 +87,7 @@ public class SetMatrixZeros
         int[] RowIndex = new int[input.GetLength(0)];
         int[] ColIndex = new int[input.GetLength(1)];
 
+        //Complete iteration of all elements
         for (int i = 0; i < input.GetLength(0); i++)
         {
             for (int j = 0; j < input.GetLength(1); j++)
