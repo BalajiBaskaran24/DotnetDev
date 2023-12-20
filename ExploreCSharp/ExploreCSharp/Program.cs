@@ -19,7 +19,7 @@ namespace ExploreCSharp
         public static void Main(string[] args)
         {
             //Set this to desired class
-            StarterEnum starterEnum = StarterEnum.DP_Proto_IClonable;
+            StarterEnum starterEnum = StarterEnum.ValueRefTypes;
 
             switch (starterEnum)
             {
