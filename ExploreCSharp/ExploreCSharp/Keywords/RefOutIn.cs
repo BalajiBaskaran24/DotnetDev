@@ -28,6 +28,10 @@ public class RefOutIn
 
         alias = 3;
         Console.WriteLine($"(a, alias) is ({a}, {alias})");  // output: (a, alias) is (3, 3)
+
+        int sample;
+        //if (sample == 1)//use of unassigned local variable
+        //{}
     }
 
     /// <summary>

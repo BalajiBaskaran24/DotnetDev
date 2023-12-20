@@ -66,8 +66,7 @@ namespace ExploreCSharp.Keywords
 
         }
 
-        //Will throw error since its sealed
-
+        //Below line Will throw error since its sealed
         //public override void VirtualMethod(){}
     }
 

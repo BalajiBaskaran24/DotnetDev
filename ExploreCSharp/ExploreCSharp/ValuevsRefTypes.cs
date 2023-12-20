@@ -26,8 +26,8 @@ namespace ExploreCSharp
             Data2.Str = "two";
             Data2.Integers.Add(2);
             Data2.Integers[0] = 2;
-            Console.WriteLine(Data1);
-            Console.WriteLine(Data2);
+            Console.WriteLine(Data1);//Numerical: 2 Str: two 2, 2
+            Console.WriteLine(Data2);//Numerical: 2 Str: two 2, 2
             //------------------------------------------------------  
 
 
@@ -104,7 +104,7 @@ namespace ExploreCSharp
             Samples = new List<SampleClass>();
             SampleClass sampleClass = new SampleClass() { Temp = 5 };
             Samples.Add(sampleClass);
-            Samples[0].Temp = 10;
+            Samples[0].Temp = 10;//sampleClass.Temp will also be set to 10
             Samples[0] = null;
             //sampleClass = new SampleClass();
         }
