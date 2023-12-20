@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExploreCSharp
+namespace ExploreCSharp.Keywords
 {
     public class DelegatesandLambda
     {
         public static void DefaultDelUsage()
         {
             List<string> fruits = new List<string> { "Apple", "Banana", "Cherry", "Date", "Elderberry" };
-            
+
             //Using Func return type can be defined
             Func<string, int, bool> predicate = (fruit, index) => fruit.Length > 5 && index % 2 == 0;// Define the Func<TSource, int, bool> predicate
             var filteredFruits = fruits.Where(predicate);// Use the predicate with LINQ's Where method
@@ -24,7 +24,7 @@ namespace ExploreCSharp
             Act("Input of action method");
         }
 
-        //--------------Declaring and using a delegate--------------
+        #region Declaring and using a delegate
 
         //When any of the methods throws an exception that is not caught within the method, 
         //that exception is passed to the caller of the delegate and no subsequent methods in the 
@@ -90,9 +90,9 @@ namespace ExploreCSharp
                 Console.WriteLine(ex);
             }
         }
-        //--------------End-----------------------------------------
+        #endregion
 
-        //--------------Using Func----------------------------------
+        #region Using Function
 
         /// <summary>
         /// Sample method that matches the lambda expression
@@ -109,8 +109,8 @@ namespace ExploreCSharp
             Func<string, string> rev = ReverseStringFunc;//Binding lambda and method
             Console.WriteLine(rev("a string"));
         }
-        //--------------End-----------------------------------------
 
+        #endregion
 
         /// <summary>
         /// Passing delegate as parameter 
