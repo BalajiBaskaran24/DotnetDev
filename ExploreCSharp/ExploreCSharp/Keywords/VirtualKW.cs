@@ -28,7 +28,8 @@ class TestClass
         }
 
         /// <summary>
-        /// Virtual keyword usage
+        /// Virtual keyword usage. 
+        /// Definition can be overridden by derived class
         /// </summary>
         /// <returns></returns>
         public virtual double Area()

@@ -15,11 +15,11 @@ namespace ExploreCSharp.Keywords
         {
             List<string> fruits = new List<string> { "Apple", "Banana", "Cherry", "Date", "Elderberry" };
 
-            //Using Func return type can be defined
+            //Func::: return type can be defined
             Func<string, int, bool> predicate = (fruit, index) => fruit.Length > 5 && index % 2 == 0;// Define the Func<TSource, int, bool> predicate
             var filteredFruits = fruits.Where(predicate);// Use the predicate with LINQ's Where method
 
-            //Cannot define the return type
+            //Action::: Return type cannot be defined
             Action<string> Act = (ActInp) => Console.WriteLine(ActInp);
             Act("Input of action method");
         }
