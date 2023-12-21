@@ -10,9 +10,9 @@ namespace ExploreCSharp.Keywords
     /// KEYWORDS COVERED: sealed
     /// Sealed modifier prevents other classes from inheriting from it
     /// </summary>
-    public sealed class SampleSealedClass
+    public sealed class SealedKW
     {
-        public SampleSealedClass()
+        public SealedKW()
         {
 
         }
