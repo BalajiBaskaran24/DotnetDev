@@ -30,9 +30,9 @@ namespace DSAndAlgoReference.SampleProblems.Arrays.OneDArray
         /// 
         /// 
         /// </summary>
-        public List<int> GetNextPermutation(List<int> input)
+        public static void GetNextPermutation(int[] input)
         {
-            int n = input.Count; // size of the array.
+            int n = input.Length; // size of the array.
 
             // Step 1: Find the break point:
             int ind = -1; // break point
@@ -50,13 +50,11 @@ namespace DSAndAlgoReference.SampleProblems.Arrays.OneDArray
             if (ind == -1)
             {
                 // reverse the whole array:
-                input.Reverse(0, input.Count);
-                return input;
+                Array.Reverse(input, 0, input.Length);
+                return;
             }
 
-            // Step 2: Find the next greater element
-            //         and swap it with arr[ind]:
-
+            // Step 2: Find the next greater element and swap it with arr[ind]:
             for (int i = n - 1; i > ind; i--)
             {
                 if (input[i] > input[ind])
@@ -68,10 +66,10 @@ namespace DSAndAlgoReference.SampleProblems.Arrays.OneDArray
                 }
             }
 
-            // Step 3: reverse the right half:
-            input.Reverse(ind + 1, input.Count);
-
-            return input;
+            //Step 3: reverse the right half:
+            Array.Reverse(input, ind + 1, input.Length - (ind + 1));
+            Console.WriteLine(string.Join(" ", input.Select(x => x.ToString())));
+            return;
         }
     }
 }
