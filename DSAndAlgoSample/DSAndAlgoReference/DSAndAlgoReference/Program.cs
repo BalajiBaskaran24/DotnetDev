@@ -16,6 +16,7 @@ public enum Option
     Array_Decibinary,
     Array_NextPermutation,
     Array_TwoSum,
+    Array_BuySellStocks,
     None
 }
 
@@ -27,8 +28,7 @@ public class Program
 
     public static void Main(string[] args)
     {
-
-        Option ReqType = Option.Array_TwoSum;
+        Option ReqType = Option.Array_BuySellStocks;
         switch (ReqType)
         {
             case Option.Stack_List:
@@ -52,12 +52,12 @@ public class Program
                 stackArr.Push(2);
                 stackArr.Push(3);
 
-                Console.WriteLine(stackArr.Peek());  // Output: 3
+                Console.WriteLine(stackArr.Peek());//Output: 3
 
                 poppedItem = stackArr.Pop();
-                Console.WriteLine(poppedItem);    // Output: 3
+                Console.WriteLine(poppedItem);//Output: 3
 
-                Console.WriteLine(stackArr.Peek());  // Output: 2
+                Console.WriteLine(stackArr.Peek());//Output: 2
                 break;
             case Option.Array_Decibinary:
                 DeciBinary.MinPartitions("32");
@@ -72,6 +72,14 @@ public class Program
                 TwoSumProblem.OptimalSolutionWoIndex(3, new int[] { 1, 2 });
                 TwoSumProblem.BetterSolutionWithIndex(300, new int[] { 1, 2, 3, 4, 5, 6 });
                 TwoSumProblem.OptimalSolutionWoIndex(300, new int[] { 1, 2, 3, 4, 5, 6 });
+                break;
+            case Option.Array_BuySellStocks:
+                Buysellstock.GetMaxProfitOneTransaction(new int[] { 7, 1, 5, 3, 6, 4 });//5
+                Buysellstock.GetMaxProfitOneTransaction(new int[] { 7, 6, 4, 3, 1 });//0
+
+                Buysellstock.GetMaxProfitMultipleTransaction(new int[] { 7, 1, 5, 3, 6, 4 });//7
+                Buysellstock.GetMaxProfitMultipleTransaction(new int[] { 1, 2, 3, 4, 5 });//4
+                Buysellstock.GetMaxProfitMultipleTransaction(new int[] { 7, 6, 4, 3, 1 });//0
                 break;
             default:
                 break;

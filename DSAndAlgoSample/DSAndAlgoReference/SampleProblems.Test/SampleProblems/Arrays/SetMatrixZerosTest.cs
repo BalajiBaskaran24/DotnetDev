@@ -1,4 +1,5 @@
 ﻿using DSAndAlgoReference.SampleProblems.Arrays;
+using DSAndAlgoReference.SampleProblems.Arrays.TwoDArray;
 using System;
 using System.Collections.Generic;
 using System.Linq;

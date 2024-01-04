@@ -1,4 +1,4 @@
-﻿using DSAndAlgoReference.SampleProblems.Arrays;
+﻿using DSAndAlgoReference.SampleProblems.Arrays.OneDArray;
 
 namespace SampleProblems.Test.SampleProblems.Arrays;
 
