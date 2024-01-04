@@ -1,9 +1,4 @@
-﻿using DSAndAlgoReference.SampleProblems.Arrays;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DSAndAlgoReference.SampleProblems.Arrays.OneDArray;
 
 namespace SampleProblems.Test.SampleProblems.Arrays
 {
