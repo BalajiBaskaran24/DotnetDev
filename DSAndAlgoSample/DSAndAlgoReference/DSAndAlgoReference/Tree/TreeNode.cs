@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace DSAndAlgoReference.Tree
 {
-    internal class TreeNode
+    public class TreeNode
     {
+        public int Data { get; }
+        public TreeNode Left, Right;
 
-        TreeNode Left, Right;
-
-        public TreeNode()
+        public TreeNode(int data)
         {
             Left = Right = null;
+            Data = data;
         }
-
     }
 }
