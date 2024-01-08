@@ -12,6 +12,7 @@ public class AlphaBetaTest
     [InlineData(new int[] { 1, 1, 2, 2 }, 1, 1)]
     [InlineData(new int[] { 1, 0, 1, 0 }, 2, 0)]
     [InlineData(new int[] { 4, 4, 4, 1, 1, 3 }, 0, 0)]
+    [InlineData(new int[] { 1, 2, 2, 4, 4, 4, 4, 2, 2, 2 }, 3, 3)]
     public void TestCalculateAlphaBeta(int[] inputArray, int expectedAlpha, int expectedBeta)
     {
         // Arrange
