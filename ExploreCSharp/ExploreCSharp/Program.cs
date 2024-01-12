@@ -18,6 +18,10 @@ namespace ExploreCSharp
     {
         public static void Main(string[] args)
         {
+            dynamic Dy = "";
+            Dy = 10;
+            Dy = 10.2;
+
             //Set this to desired class
             StarterEnum starterEnum = StarterEnum.ValueRefTypes;
 
