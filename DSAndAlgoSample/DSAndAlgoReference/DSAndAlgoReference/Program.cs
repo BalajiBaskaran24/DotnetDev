@@ -17,6 +17,7 @@ public enum Option
     Array_NextPermutation,
     Array_TwoSum,
     Array_BuySellStocks,
+    Array_MaximumWork,
     None
 }
 
@@ -28,7 +29,7 @@ public class Program
 
     public static void Main(string[] args)
     {
-        Option ReqType = Option.Array_BuySellStocks;
+        Option ReqType = Option.Array_MaximumWork;
         switch (ReqType)
         {
             case Option.Stack_List:
@@ -80,6 +81,9 @@ public class Program
                 Buysellstock.GetMaxProfitMultipleTransaction(new int[] { 7, 1, 5, 3, 6, 4 });//7
                 Buysellstock.GetMaxProfitMultipleTransaction(new int[] { 1, 2, 3, 4, 5 });//4
                 Buysellstock.GetMaxProfitMultipleTransaction(new int[] { 7, 6, 4, 3, 1 });//0
+                break;
+            case Option.Array_MaximumWork:
+                MaximumWorkMinimumSlots.Starter();
                 break;
             default:
                 break;
