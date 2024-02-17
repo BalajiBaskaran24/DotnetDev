@@ -12,6 +12,8 @@
     DP_Proto_IClonable,
     DP_Singleton,
     DP_Singleton_AmbientContext,
+    TAP_ProgressUpdate,
+    TAP_AsyncAwaitKW,
     None
 }
 
