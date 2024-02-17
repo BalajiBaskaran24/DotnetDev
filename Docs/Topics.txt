@@ -1,0 +1,44 @@
+C#
+ - LINQ
+ - Dotnet core features
+Web API
+Asp net
+Asp net core
+EF core
+DB - MS SQL, SQL, Stored procedures:T-SQL
+Mongo DB
+	- JSON
+	- No SQL or semi structured
+	- Indexing - compound/simple indexing	
+	- Collection segregation, document
+	- Schemaless
+	- Deployement
+		- SSL and Non SSL
+	- Take use cases or data from online and learn
+	- Multi-level nested hierarchy
+		- Querying the above type
+	- Querying	
+		- Aggregation
+		- Projection
+		- Sorting
+		- Cursor
+		- Similar to joining
+	- Mongo DAO - Pojo, bson
+		
+	references:
+	- Mongo DB official documentation
+	
+Github actions
+JS
+React/Typescript
+Azure - Developer associate certification
+
+Microservices
+	- Http/Rest API for  
+Java spring boot
+	- Layers ::: control(endpoint),service(Businees logic),repository(BE and connectvity), component and configuration
+	- Maven(Java spring boot is built on top of this) 
+		- Repository. Similar to nuget packages
+Advanced :::: Dockerization and Kubernetes
+	
+	

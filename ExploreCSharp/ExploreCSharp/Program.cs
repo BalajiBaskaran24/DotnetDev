@@ -11,6 +11,7 @@ using ExploreCSharp.DesignPatterns.Creational.Factory;
 using ExploreCSharp.DesignPatterns.Creational.Factory.DimitrySample;
 using ExploreCSharp.DesignPatterns.Creational.Prototype;
 using ExploreCSharp.DesignPatterns.Creational.Singleton;
+using ExploreCSharp.TAP;
 
 namespace ExploreCSharp
 {
@@ -18,12 +19,19 @@ namespace ExploreCSharp
     {
         public static void Main(string[] args)
         {
+            Task Res = Starter();
+            Task.WaitAll(Res);
+            
+        }
+
+        private static async Task Starter()
+        {
             dynamic Dy = "";
             Dy = 10;
             Dy = 10.2;
 
             //Set this to desired class
-            StarterEnum starterEnum = StarterEnum.ValueRefTypes;
+            StarterEnum starterEnum = StarterEnum.TAP_AsyncAwaitKW;
 
             switch (starterEnum)
             {
@@ -63,9 +71,19 @@ namespace ExploreCSharp
                 case StarterEnum.DP_Singleton_AmbientContext:
                     AmbientContextStarter.Starter();
                     break;
+                case StarterEnum.TAP_ProgressUpdate:
+                    ProgressUpdate.Starter();
+                    break;
+                case StarterEnum.TAP_AsyncAwaitKW:
+                    Task Result = AsyncAwaitKW.SampleAsyncMethod();
+                    Console.WriteLine("Next" + Result.IsCompleted);
+                    await Result;
+                    Console.WriteLine("End" + Result.IsCompleted);
+                    break;
                 default:
                     break;
             }
+            //Console.ReadLine();
             return;
 
             //int 
@@ -86,7 +104,6 @@ namespace ExploreCSharp
             //sOLID.TriggerL();
 
             //DIPStarter.Execute();
-
         }
     }
 }
