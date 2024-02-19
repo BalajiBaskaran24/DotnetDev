@@ -4,6 +4,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createRoot } from "react-dom/client";
+import SampleContextComponent from "./components/contextsample";
+import DisplayEmployee from "./components/loopsample";
 
 class Employee extends React.Component {
   constructor(props) {
@@ -20,15 +22,21 @@ class Employee extends React.Component {
 
   render() {
     console.log(this.props + "in render method");
+    const listdata = [
+      { id: "1", Name: "Bala" },
+      { id: "2", Name: "Ji" },
+      { id: "3", Name: "Bas" },
+    ];
     return (
       <div>
+        {/* <SampleContextComponent></SampleContextComponent>
         <p>Updated salary: {this.state.updateSalary}</p>
         <Salary
           basic={this.props.basic}
           hra={this.props.hra}
           bonus={this.props.bonus}
           OnSalaryChangedProp={this.getUpdatedSalary}
-        ></Salary>
+        ></Salary> */}
       </div>
     );
   }
@@ -79,6 +87,18 @@ class Salary extends React.Component {
   }
 }
 
-const element = <Employee basic="100000" hra="20000" bonus="15000"></Employee>;
+// const element = <Employee basic="100000" hra="20000" bonus="15000"></Employee>;
+// const root = createRoot(document.getElementById("root"));
+// root.render(element);
+
+const element = (
+  <DisplayEmployee
+    data={[
+      { id: "1", Name: "Bala" },
+      { id: "2", Name: "Ji" },
+      { id: "3", Name: "Bas" },
+    ]}
+  ></DisplayEmployee>
+);
 const root = createRoot(document.getElementById("root"));
 root.render(element);
