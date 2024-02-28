@@ -6,6 +6,11 @@ import reportWebVitals from "./reportWebVitals";
 import { createRoot } from "react-dom/client";
 import SampleContextComponent from "./components/contextsample";
 import DisplayEmployee from "./components/loopsample";
+import Toolbar from "./components/eventssample";
+
+const root = createRoot(document.getElementById("root"));
+const element = <Toolbar></Toolbar>;
+root.render(element);
 
 class Employee extends React.Component {
   constructor(props) {
@@ -91,14 +96,14 @@ class Salary extends React.Component {
 // const root = createRoot(document.getElementById("root"));
 // root.render(element);
 
-const element = (
-  <DisplayEmployee
-    data={[
-      { id: "1", Name: "Bala" },
-      { id: "2", Name: "Ji" },
-      { id: "3", Name: "Bas" },
-    ]}
-  ></DisplayEmployee>
-);
-const root = createRoot(document.getElementById("root"));
-root.render(element);
+// const element = (
+//   <DisplayEmployee
+//     data={[
+//       { id: "1", Name: "Bala" },
+//       { id: "2", Name: "Ji" },
+//       { id: "3", Name: "Bas" },
+//     ]}
+//   ></DisplayEmployee>
+// );
+// const root = createRoot(document.getElementById("root"));
+// root.render(element);
