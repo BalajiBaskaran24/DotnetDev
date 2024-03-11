@@ -19,12 +19,12 @@ namespace ExploreCSharp
     {
         public static void Main(string[] args)
         {
-            Task Res = Starter();
-            Task.WaitAll(Res);
-            
+            Task Res = await Starter();
+
+
         }
 
-        private static async Task Starter()
+        private static async Task<int> Starter()
         {
             dynamic Dy = "";
             Dy = 10;
@@ -32,7 +32,7 @@ namespace ExploreCSharp
 
             //Set this to desired class
             StarterEnum starterEnum = StarterEnum.TAP_AsyncAwaitKW;
-
+            var Result = new Task<T>;
             switch (starterEnum)
             {
                 case StarterEnum.Eq_EqToOp:
@@ -75,7 +75,7 @@ namespace ExploreCSharp
                     ProgressUpdate.Starter();
                     break;
                 case StarterEnum.TAP_AsyncAwaitKW:
-                    Task Result = AsyncAwaitKW.SampleAsyncMethod();
+                    Result = AsyncAwaitKW.SampleAsyncMethod();
                     Console.WriteLine("Next" + Result.IsCompleted);
                     await Result;
                     Console.WriteLine("End" + Result.IsCompleted);
@@ -84,7 +84,7 @@ namespace ExploreCSharp
                     break;
             }
             //Console.ReadLine();
-            return;
+            return Result;
 
             //int 
             int x = 1, y = 2;

@@ -8,26 +8,10 @@ namespace ExploreCSharp.TAP
 {
     public class AsyncAwaitKW
     {
-        public static async Task SampleAsyncMethod()
+        public static async Task<int> SampleAsyncMethod()
         {
             try
             {
-                //Console.WriteLine("Start of method");
-                //await Task.Run(() =>
-                //{
-                //    try
-                //    {
-                //        Console.WriteLine("Task 2s");
-                //        Thread.Sleep(2000);
-                //        HelperClass();
-                //    }
-                //    catch (Exception ex)
-                //    {
-
-                //    }
-                //}
-                //);
-                //Console.WriteLine("End of method");
                 Console.WriteLine("Start of method");
                 await Task.Run(HelperClass);
                 Console.WriteLine("End of method");
@@ -36,13 +20,14 @@ namespace ExploreCSharp.TAP
             {
 
             }
+            return 2;
         }
 
         public static async Task HelperClass()
         {
-            Console.WriteLine("st HelperCLass");
-            await Task.Delay(10000);
-            Console.WriteLine("HelperCLass");
+            Console.WriteLine("start of HelperCLass");
+            await Task.Delay(5000);
+            Console.WriteLine("End of HelperCLass");
 
         }
     }
