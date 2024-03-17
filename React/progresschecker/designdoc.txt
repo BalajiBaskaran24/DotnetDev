@@ -1,0 +1,3 @@
+Todos:
+Add a component similar to wishlist. List of specific day or task.
+	- Add and remove element

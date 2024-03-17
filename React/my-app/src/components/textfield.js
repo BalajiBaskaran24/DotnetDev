@@ -9,7 +9,8 @@ export default function TextField() {
   const [Count, SetCount] = useState(0);
 
   function handleSubmit() {
-    SetCount((count) => count + 1);
+    //SetCount((count) => count + 1);
+    SetCount(Count + 1);
     //alert("submit button is clicked");
   }
   return (
