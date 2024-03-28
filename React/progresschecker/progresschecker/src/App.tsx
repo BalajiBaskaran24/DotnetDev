@@ -2,11 +2,12 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Title from "./components/title";
+import DBAccess from "./common/DBAccess";
 
 function App() {
   return (
     <div className="App">
-      <Title name="React Jonas Course"></Title>
+      <DBAccess></DBAccess>
     </div>
   );
 }

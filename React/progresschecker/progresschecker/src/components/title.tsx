@@ -1,10 +1,10 @@
 import React from "react";
 
-interface Props {
+interface data {
   name: string;
 }
 
-const Title: React.FC<Props> = ({ name }) => {
+const Title: React.FC<data> = ({ name }) => {
   return <div>{name}</div>;
 };
 
