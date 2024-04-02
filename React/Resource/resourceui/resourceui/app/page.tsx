@@ -1,7 +1,7 @@
-import QuestionAns from "./components/questionanswers";
-import Sections from "./components/sections";
-import SubmitQuestion from "./components/submitquestion";
-import Topics from "./components/topics";
+import QuestionAns from "../pages/questionanswers";
+import Sections from "../pages/sections";
+import SubmitQuestion from "../pages/submitquestion";
+import Topics from "../pages/topics";
 export default function Page() {
   return (
     <>
