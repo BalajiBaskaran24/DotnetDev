@@ -19,7 +19,7 @@ namespace DSAndAlgoReference.SampleProblems.Arrays.OneDArray
             int[] tasks = { 2, 3, 2, 3, 3 }; // Time taken for each task
             int T = 4; // Maximum time to complete all tasks
 
-            Console.WriteLine($"Minimum number of slots required: {k}");
+            //Console.WriteLine($"Minimum number of slots required: {k}");
         }
 
     }

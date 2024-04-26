@@ -1,0 +1,70 @@
+* {
+  font-size: 15px;
+}
+
+.container {
+  max-width: 1000px;
+  background-color: bisque;
+  margin: 0 auto; /*For top and bottom 0 and left and right auto*/
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summary {
+  text-align: right;
+}
+
+.logo {
+  display: flex;
+  gap: 20px; /*Creates gap between items in this flex container*/
+}
+
+h1 {
+  background-color: rgb(255, 113, 66);
+  color: antiquewhite;
+}
+
+.checklistitem {
+  display: flex;
+  gap: 30px;
+}
+
+.deletechecklist {
+  margin-left: auto;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 0.5Fr 1.5Fr;
+  gap: 50px;
+}
+
+/*Applies to descendants of an element with the class name "logo"*/
+.logo img {
+  width: 100px;
+  height: 100px;
+}
+
+.ckdesc {
+  transition: font-size 100ms ease-in-out;
+}
+
+.ckdesc:hover {
+  /*transform: scale(1.2); /*To zoom in on hover*/
+  font-size: 1.2rem;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background-color: rgb(236, 173, 152);
+  height: 25px;
+  width: 70px;
+  border-radius: 10px;
+  cursor: pointer;
+}

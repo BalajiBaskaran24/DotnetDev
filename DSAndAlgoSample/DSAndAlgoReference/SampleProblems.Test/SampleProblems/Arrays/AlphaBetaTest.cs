@@ -24,6 +24,6 @@ public class AlphaBetaTest
 
         // Assert
         Assert.Equal(expectedAlpha, Alpha);
-        Assert.Equal(expectedBeta, Beta);
+        Assert.Equal(expected: expectedBeta, Beta);
     }
 }
