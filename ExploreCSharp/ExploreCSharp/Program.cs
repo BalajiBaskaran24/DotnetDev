@@ -12,6 +12,7 @@ using ExploreCSharp.DesignPatterns.Creational.Factory.DimitrySample;
 using ExploreCSharp.DesignPatterns.Creational.Prototype;
 using ExploreCSharp.DesignPatterns.Creational.Singleton;
 using ExploreCSharp.TAP;
+using Lib1;
 
 namespace ExploreCSharp
 {
@@ -19,9 +20,7 @@ namespace ExploreCSharp
     {
         public static void Main(string[] args)
         {
-            Task Res = await Starter();
-
-
+            Starter();
         }
 
         private static async Task<int> Starter()
@@ -32,7 +31,7 @@ namespace ExploreCSharp
 
             //Set this to desired class
             StarterEnum starterEnum = StarterEnum.TAP_AsyncAwaitKW;
-            var Result = new Task<T>;
+            //var Result = new Task<T>;
             switch (starterEnum)
             {
                 case StarterEnum.Eq_EqToOp:

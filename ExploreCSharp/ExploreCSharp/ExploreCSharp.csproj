@@ -23,6 +23,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\Temp\ConsoleApp2\Lib1\Lib1.csproj" />
+    <ProjectReference Include="..\..\..\..\..\Temp\ConsoleApp2\Lib2\Lib2.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="DesignPatterns\Creational\Singleton\capitals.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
