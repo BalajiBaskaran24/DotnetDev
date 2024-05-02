@@ -105,11 +105,12 @@ namespace ExploreCSharp.Keywords
 
         /// <summary>
         /// Override the default interface method
+        /// Will throw error if this method is not implemented
         /// </summary>
         public override void IntMethod2() { }
 
         /// <summary>
-        /// Implement default implemented method. 
+        /// Implement default implemented method
         /// Use of override keyword will throw error because its not abstract method
         /// </summary>
         public void IntMethod3() { }

@@ -74,16 +74,16 @@ namespace ExploreCSharp
                     ProgressUpdate.Starter();
                     break;
                 case StarterEnum.TAP_AsyncAwaitKW:
-                    Result = AsyncAwaitKW.SampleAsyncMethod();
-                    Console.WriteLine("Next" + Result.IsCompleted);
-                    await Result;
-                    Console.WriteLine("End" + Result.IsCompleted);
+                    //Result = AsyncAwaitKW.SampleAsyncMethod();
+                    //Console.WriteLine("Next" + Result.IsCompleted);
+                    //await Result;
+                    //Console.WriteLine("End" + Result.IsCompleted);
                     break;
                 default:
                     break;
             }
             //Console.ReadLine();
-            return Result;
+            return 10;
 
             //int 
             int x = 1, y = 2;

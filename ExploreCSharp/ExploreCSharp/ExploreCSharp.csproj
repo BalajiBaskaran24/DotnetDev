@@ -23,8 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Temp\ConsoleApp2\Lib1\Lib1.csproj" />
-    <ProjectReference Include="..\..\..\..\..\Temp\ConsoleApp2\Lib2\Lib2.csproj" />
+    <ProjectReference Include="..\Lib1\Lib1.csproj" />
+    <ProjectReference Include="..\Lib2\Lib2.csproj" />
   </ItemGroup>
 
   <ItemGroup>
