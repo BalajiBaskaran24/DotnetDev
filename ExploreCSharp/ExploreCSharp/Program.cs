@@ -16,10 +16,43 @@ using Lib1;
 
 namespace ExploreCSharp
 {
+
+    class BList<T> : List<T>
+    {
+        public BList(int count) : base(count)
+        {
+
+        }
+    }
+
+    class A
+    {
+        public void Print()
+        {
+
+        }
+    }
+
+    class B
+    {
+        public void Print()
+        {
+
+        }
+    }
     public class Program
     {
         public static void Main(string[] args)
         {
+            List<int> ints = new List<int>(5);
+            BList<int> Data = new BList<int>(2);
+
+            Data.Add(1);
+
+
+            A obj = new A();
+            obj.Print();
+
             Starter();
         }
 
