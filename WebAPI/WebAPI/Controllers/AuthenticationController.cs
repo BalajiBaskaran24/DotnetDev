@@ -32,7 +32,7 @@ public class AuthenticationController : ControllerBase
         }
         else
         {
-
+            return "";
         }
     }
 
@@ -48,6 +48,8 @@ public class AuthenticationController : ControllerBase
 
         //Claims - data points
         List<Claim> claims = new List<Claim>();
+
+        return "";
 
     }
 
