@@ -79,7 +79,7 @@ namespace ExploreCSharp.Keywords
 
         //public void SampleMethod() //CS0708
         //{
-
+        //
         //}
     }
 
@@ -109,6 +109,25 @@ namespace ExploreCSharp.Keywords
         5
         99
     */
+
+    public class NonStaticClass
+    {
+        public static int StaticVariable;
+
+        public void NonstaticMethod()
+        {
+            StaticVariable++;
+            NonStaticVariable++;
+        }
+
+        public int NonStaticVariable;
+
+        public static void StaticMethod()
+        {
+            //NonStaticVariable++;//CS0120 Object reference is required
+        }
+
+    }
 
 
     public class StaticStarter

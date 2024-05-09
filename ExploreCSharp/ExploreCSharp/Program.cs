@@ -27,7 +27,7 @@ namespace ExploreCSharp
 
     class A
     {
-        public void Print()
+        internal void Print()
         {
 
         }
@@ -44,10 +44,10 @@ namespace ExploreCSharp
     {
         public static void Main(string[] args)
         {
-            List<int> ints = new List<int>(5);
-            BList<int> Data = new BList<int>(2);
+            //List<int> ints = new List<int>(5);
+            //BList<int> Data = new BList<int>(2);
 
-            Data.Add(1);
+            //Data.Add(1);
 
 
             A obj = new A();
@@ -111,6 +111,7 @@ namespace ExploreCSharp
                     //Console.WriteLine("Next" + Result.IsCompleted);
                     //await Result;
                     //Console.WriteLine("End" + Result.IsCompleted);
+                    StephenToubAsyncAwait.Starter();
                     break;
                 default:
                     break;

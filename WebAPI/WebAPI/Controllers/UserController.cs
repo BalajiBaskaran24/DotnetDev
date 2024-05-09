@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebAPI.Filters;
 namespace WebAPI.Controllers;
 
 //To perform
@@ -12,6 +13,7 @@ namespace WebAPI.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
+[ServiceFilter(typeof(LogActionFilter))]
 public class UserController : ControllerBase
 {
     public IConfiguration Configuration { get; }
@@ -27,6 +29,7 @@ public class UserController : ControllerBase
 
     // GET: api/Users/
     [HttpGet()]//Decorator
+    [LogActionFilter]
     public string Get()
     {
         return Configuration.GetConnectionString("Default");

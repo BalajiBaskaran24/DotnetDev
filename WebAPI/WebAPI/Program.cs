@@ -1,3 +1,5 @@
+using WebAPI.Filters;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);//IConfiguration will be configured here
 
 
@@ -6,6 +8,7 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);//IConfigurat
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddScoped<LogActionFilter>();
 builder.Services.AddSwaggerGen();//Needs Swashbuckle.AspNetCore nuget package
 
 WebApplication app = builder.Build();//app : WebApplication
@@ -26,7 +29,7 @@ app.UseHttpsRedirection();
 //Microsoft.IdentityModel.Tokens
 //Microsoft.IdentityModel.Tokens.Jwt
 
-app.UseAuthorization();
+//app.UseAuthorization();
 
 app.MapControllers();
 
