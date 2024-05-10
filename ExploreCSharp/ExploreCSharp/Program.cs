@@ -46,12 +46,9 @@ namespace ExploreCSharp
         {
             //List<int> ints = new List<int>(5);
             //BList<int> Data = new BList<int>(2);
-
             //Data.Add(1);
-
-
-            A obj = new A();
-            obj.Print();
+            //A obj = new A();
+            //obj.Print();
 
             Starter();
         }
@@ -63,7 +60,7 @@ namespace ExploreCSharp
             Dy = 10.2;
 
             //Set this to desired class
-            StarterEnum starterEnum = StarterEnum.TAP_AsyncAwaitKW;
+            StarterEnum starterEnum = StarterEnum.Comparer;
             //var Result = new Task<T>;
             switch (starterEnum)
             {
@@ -112,6 +109,9 @@ namespace ExploreCSharp
                     //await Result;
                     //Console.WriteLine("End" + Result.IsCompleted);
                     StephenToubAsyncAwait.Starter();
+                    break;
+                case StarterEnum.Comparer:
+                    ComparerSample.Starter();
                     break;
                 default:
                     break;
