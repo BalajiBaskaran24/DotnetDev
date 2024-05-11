@@ -49,8 +49,7 @@ namespace ExploreCSharp
             //Data.Add(1);
             //A obj = new A();
             //obj.Print();
-
-            Starter();
+            //Starter();
         }
 
         private static async Task<int> Starter()

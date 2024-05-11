@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace ExploreCSharp.Keywords
 {
@@ -114,5 +116,79 @@ namespace ExploreCSharp.Keywords
         /// Use of override keyword will throw error because its not abstract method
         /// </summary>
         public void IntMethod3() { }
+    }
+
+
+    //Abstract classes can have multi level
+    //Abstract class can implement abstract class
+    //static or sealed keyword cannot be applied to abstract class
+    //Class cannot implement multiple abstract base class
+
+    public class NonAbstract
+    {
+
+        public abstract class InnerClass
+        {
+
+        }
+    }
+
+
+
+
+    //Class accessibility should be consistent between the base class and inherited class.
+    public class InternalAbs
+    {
+        NonAbstract.InnerClass InnerClass;
+        NonAbstract NonAbsClass;
+        public void NewMethod()
+        {
+        }
+    }
+    //Below decleration will throw error
+    //public class PublicAbsClass : InternalAbs
+    //{
+    //}
+
+
+
+
+
+    public abstract class BaseAbstractGrand : NonAbstract
+    {
+        public abstract string Name { get; }
+
+        public abstract void SampleMethod();
+    }
+    public abstract class BaseAbstractFather : BaseAbstractGrand
+    {
+
+    }
+    public abstract class BaseAbstractSon : BaseAbstractFather
+    {
+
+    }
+    public class Derived : BaseAbstractSon
+    {
+        public override string Name { get; }
+
+        public override void SampleMethod()
+        {
+
+        }
+    }
+
+    public abstract class BaseAbs1
+    {
+
+    }
+    public interface BaseAbs2
+    {
+
+    }
+
+    public class Der : BaseAbs1, BaseAbs2
+    {
+
     }
 }
