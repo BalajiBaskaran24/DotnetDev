@@ -40,16 +40,52 @@ namespace ExploreCSharp
 
         }
     }
+
+    public class SampleClass1
+    {
+        public string SampleStr;
+    }
+
     public class Program
     {
         public static void Main(string[] args)
         {
+
+            string a = "sample";
+            string b = a;
+            a = "modify";
+
+            SampleClass1 sampleClass = new SampleClass1() { SampleStr = "Sample" };
+            SampleClass1 sampleClass2 = sampleClass;
+            sampleClass.SampleStr = "modify";
+
+
+            object ob1 = 5;
+            object ob2 = 5;
+            if (ob1.Equals(ob2))
+            {
+                var t = ob1.GetType();
+            }
+
             //List<int> ints = new List<int>(5);
             //BList<int> Data = new BList<int>(2);
             //Data.Add(1);
             //A obj = new A();
             //obj.Print();
-            //Starter();
+
+            Children A = new Children();
+            Children B = new Children();
+
+            if (A == B)
+            {
+
+            }
+            else if (A.Equals(B))
+            {
+
+            }
+
+            Starter();
         }
 
         private static async Task<int> Starter()
@@ -111,6 +147,9 @@ namespace ExploreCSharp
                     break;
                 case StarterEnum.Comparer:
                     ComparerSample.Starter();
+                    break;
+                case StarterEnum.AbstractKW:
+                    AbstractStarter.Starter();
                     break;
                 default:
                     break;

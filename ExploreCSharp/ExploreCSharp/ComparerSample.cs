@@ -19,7 +19,12 @@ namespace ExploreCSharp
             StringData = st;
         }
     }
+    public enum SampleEnum
+    {
+        EN1,
+        EN2, EN3
 
+    }
     internal class ComparerSample
     {
         public static void Starter()
@@ -30,6 +35,8 @@ namespace ExploreCSharp
             Console.WriteLine(CompareValues("apple", "banana"));  // Output: -1
             Console.WriteLine(CompareValues(3.5, 2.5));       // Output: 1
             Console.WriteLine(CompareValues(true, false));    // Output: 1
+            Console.WriteLine(CompareValues(false, true));    // Output: -1
+            Console.WriteLine(CompareValues(SampleEnum.EN1, SampleEnum.EN2));    // Output: -1
             Console.WriteLine(CompareValues<int?>(null, 5));  // Output: -1
             Console.WriteLine(CompareValues<string>("apple", null));  // Output: 1
             Console.WriteLine(CompareValues<string>(null, null));  // Output: 0
@@ -56,7 +63,10 @@ namespace ExploreCSharp
             if (b == null)
                 return 1;
 
+            //return Comparer<T>.Default.Compare(a, b);
+            a.Equals(b);
             return Comparer<T>.Default.Compare(a, b);
+           
         }
     }
 

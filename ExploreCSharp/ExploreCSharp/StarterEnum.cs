@@ -15,6 +15,7 @@
     TAP_ProgressUpdate,
     TAP_AsyncAwaitKW,
     Comparer,
+    AbstractKW,
     None
 }
 

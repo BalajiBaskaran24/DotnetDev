@@ -33,7 +33,7 @@ namespace ExploreCSharp
 
 
 
-            IQueryable<int> query = ;//dbContext.Numbers.Where(n => n > 1);
+            IQueryable<int> query = null;//dbContext.Numbers.Where(n => n > 1);
             List<int> QueryResult = query.ToList();
         }
     }
