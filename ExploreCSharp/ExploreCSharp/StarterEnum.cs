@@ -14,6 +14,8 @@
     DP_Singleton_AmbientContext,
     TAP_ProgressUpdate,
     TAP_AsyncAwaitKW,
+    Comparer,
+    AbstractKW,
     None
 }
 

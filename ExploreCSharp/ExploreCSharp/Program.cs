@@ -12,27 +12,102 @@ using ExploreCSharp.DesignPatterns.Creational.Factory.DimitrySample;
 using ExploreCSharp.DesignPatterns.Creational.Prototype;
 using ExploreCSharp.DesignPatterns.Creational.Singleton;
 using ExploreCSharp.TAP;
+using Lib1;
 
 namespace ExploreCSharp
 {
+
+    class BList<T> : List<T>
+    {
+        public BList(int count) : base(count)
+        {
+
+        }
+    }
+
+    class A
+    {
+        internal void Print()
+        {
+
+        }
+    }
+
+    class B
+    {
+        public void Print()
+        {
+
+        }
+    }
+
+    public class SampleClass1
+    {
+        public string SampleStr;
+        public int SampleInt;
+        public SampleClass1(string SampleStr)
+        {
+            this.SampleStr = SampleStr;
+        }
+    }
+
     public class Program
     {
         public static void Main(string[] args)
         {
-            Task Res = await Starter();
+
+            
+
+            string a = "sample";
+            string b = a;
+            a = "modify";
+
+            SampleClass1 sampleClass = new SampleClass1("") { SampleStr = "Sample" };
+            SampleClass1 sampleClass2 = sampleClass;
+            sampleClass.SampleStr = "modify";
 
 
+            object ob1 = 5;
+            object ob2 = 5;
+            if (ob1.Equals(ob2))
+            {
+                var t = ob1.GetType();
+            }
+
+            //List<int> ints = new List<int>(5);
+            //BList<int> Data = new BList<int>(2);
+            //Data.Add(1);
+            //A obj = new A();
+            //obj.Print();
+
+            Children A = new Children();
+            Children B = new Children();
+
+            if (A == B)
+            {
+
+            }
+            else if (A.Equals(B))
+            {
+
+            }
+
+            Starter();
         }
 
         private static async Task<int> Starter()
         {
+            Children Nonnull = null!;
+            Children? Nullable = null;
+
+
             dynamic Dy = "";
             Dy = 10;
             Dy = 10.2;
 
             //Set this to desired class
-            StarterEnum starterEnum = StarterEnum.TAP_AsyncAwaitKW;
-            var Result = new Task<T>;
+            StarterEnum starterEnum = StarterEnum.Comparer;
+            //var Result = new Task<T>;
             switch (starterEnum)
             {
                 case StarterEnum.Eq_EqToOp:
@@ -75,16 +150,23 @@ namespace ExploreCSharp
                     ProgressUpdate.Starter();
                     break;
                 case StarterEnum.TAP_AsyncAwaitKW:
-                    Result = AsyncAwaitKW.SampleAsyncMethod();
-                    Console.WriteLine("Next" + Result.IsCompleted);
-                    await Result;
-                    Console.WriteLine("End" + Result.IsCompleted);
+                    //Result = AsyncAwaitKW.SampleAsyncMethod();
+                    //Console.WriteLine("Next" + Result.IsCompleted);
+                    //await Result;
+                    //Console.WriteLine("End" + Result.IsCompleted);
+                    StephenToubAsyncAwait.Starter();
+                    break;
+                case StarterEnum.Comparer:
+                    ComparerSample.Starter();
+                    break;
+                case StarterEnum.AbstractKW:
+                    AbstractStarter.Starter();
                     break;
                 default:
                     break;
             }
             //Console.ReadLine();
-            return Result;
+            return 10;
 
             //int 
             int x = 1, y = 2;
