@@ -44,6 +44,11 @@ namespace ExploreCSharp
     public class SampleClass1
     {
         public string SampleStr;
+        public int SampleInt;
+        public SampleClass1(string SampleStr)
+        {
+            this.SampleStr = SampleStr;
+        }
     }
 
     public class Program
@@ -51,11 +56,13 @@ namespace ExploreCSharp
         public static void Main(string[] args)
         {
 
+            
+
             string a = "sample";
             string b = a;
             a = "modify";
 
-            SampleClass1 sampleClass = new SampleClass1() { SampleStr = "Sample" };
+            SampleClass1 sampleClass = new SampleClass1("") { SampleStr = "Sample" };
             SampleClass1 sampleClass2 = sampleClass;
             sampleClass.SampleStr = "modify";
 
@@ -90,6 +97,10 @@ namespace ExploreCSharp
 
         private static async Task<int> Starter()
         {
+            Children Nonnull = null!;
+            Children? Nullable = null;
+
+
             dynamic Dy = "";
             Dy = 10;
             Dy = 10.2;
