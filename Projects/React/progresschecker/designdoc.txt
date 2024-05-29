@@ -1,8 +1,0 @@
-Visio link:
-https://graniteriverlabs1-my.sharepoint.com/:u:/g/personal/india-drive_graniteriverlabs_com/ES3MbLPbKJpIpAflwPBAPzAB1CwNIKXFvkt-b7gA8GXHbA?e=OKUFac
-
-
-Todos:
-Add a component similar to wishlist. List of specific day or task.
-	- Add and remove element
-	
