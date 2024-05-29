@@ -9,14 +9,16 @@ namespace DSAndAlgoReference.SampleProblems.Arrays.OneDArray;
 /// <summary>
 /// Company name: KLA
 /// Level: Easy
-/// If number k appears exactly k times - Alpha
-/// If number k appears exactly k times and starts from kth index
+/// If number k appears exactly k times continuous - Alpha
+/// If number k appears exactly k times and starts from kth index - Beta
 /// </summary>
 public class AlphaBeta
 {
 
     /// <summary>
-    /// 
+    /// 0 1 2 2 4 4 4 4 3 3 3
+    /// alpha - 4
+    /// beta - 2
     /// </summary>
     /// <param name="input"></param>
     /// <returns>Alpha, beta</returns>
