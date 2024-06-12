@@ -1,1 +1,3 @@
-export default function ProductCategoryRow() {}
+export default function ProductCategoryRow() {
+  return <></>;
+}
